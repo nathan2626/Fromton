@@ -145,7 +145,6 @@
 				02CC6FAAA798953E0BDF9B13 /* Pods-Fromton-FromtonTests.debug.xcconfig */,
 				1EBFB029E032C1FE8F84CEB3 /* Pods-Fromton-FromtonTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -485,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 683C7RDNMR;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Fromton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 683C7RDNMR;
 				INFOPLIST_FILE = Fromton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
