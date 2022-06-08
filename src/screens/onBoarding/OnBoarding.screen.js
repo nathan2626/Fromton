@@ -127,7 +127,7 @@ const OnBoarding = ({navigation}) => {
                   {
                     backgroundColor: 'transparent',
                     borderWidth: 1,
-                    borderColor: "#ffffff",
+                    borderColor: '#ffffff',
                   },
                 ]}
                 onPress={skip}>

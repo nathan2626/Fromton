@@ -36,7 +36,7 @@ const HomeRegistration = ({navigation}) => {
           <View style={styles.fixViewBtn1}>
             <TouchableOpacity
               style={[styles.btn]}
-              onPress={() => navigation.replace('')}>
+              onPress={() => navigation.replace('Register')}>
               <Text style={styles.textBtn2Set}>Créer un compte</Text>
             </TouchableOpacity>
           </View>
@@ -44,7 +44,7 @@ const HomeRegistration = ({navigation}) => {
           <View style={styles.fixViewBtn2}>
             <TouchableOpacity
               style={[styles.btn2]}
-              onPress={() => navigation.replace('')}>
+              onPress={() => navigation.replace('Login')}>
               <Text style={styles.textBtn1Set}>Se connecter</Text>
             </TouchableOpacity>
           </View>
