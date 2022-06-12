@@ -29,11 +29,12 @@ const styles = StyleSheet.create({
   },
   loginBtn: {
     alignItems: 'center',
-    backgroundColor: '#4632A1',
+    borderWidth: 2,
+    borderColor: "#dd4d11",
     width: width / 2,
     justifyContent: 'center',
     borderRadius: 50,
-    height: 39,
+    height: 50,
   },
   socialLoginView: {
     flexDirection: 'row',

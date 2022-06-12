@@ -35,7 +35,7 @@ const Login = ({navigation}) => {
 
           <Text style={{color: '#dd4d11', fontSize: 34}}>Bienvenue</Text>
           <Text>Pas encore de compte ? 
-            <Text style={{color: '#dd4d11', fontStyle: 'italic'}}>
+            <Text style={{color: '#dd4d11', fontStyle: 'italic'}}   onPress={() => navigation.replace('Register')}>
               {' '} S'enregister
              </Text>
           </Text>
@@ -53,7 +53,7 @@ const Login = ({navigation}) => {
 
             <View style={{height:100, justifyContent: 'center', alignItems: 'center', marginTop: 32}}>
               <TouchableOpacity style={styles.loginBtn}>
-                <Text style={{ fontSize: 15, color: '#fff',}}>Se connecter</Text>
+                <Text style={{ color: 'black',  fontWeight: 'bold', fontSize: 20,}}>Se connecter</Text>
               </TouchableOpacity>
             </View>
 
