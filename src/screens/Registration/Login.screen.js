@@ -52,7 +52,7 @@ const Login = ({navigation}) => {
             </View>
 
             <View style={{height:100, justifyContent: 'center', alignItems: 'center', marginTop: 32}}>
-              <TouchableOpacity style={styles.loginBtn}>
+              <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.replace('Home')}>
                 <Text style={{ color: 'black',  fontWeight: 'bold', fontSize: 20,}}>Se connecter</Text>
               </TouchableOpacity>
             </View>
