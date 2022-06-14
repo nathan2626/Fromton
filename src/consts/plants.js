@@ -1,7 +1,7 @@
 const plants = [
     {
       id: 1,
-      name: 'Succulent Plant',
+      name: 'COMTÉ AOP 12 MOIS',
       price: '39.99',
       like: true,
       img: require('../assets/cheeses/cheese1.png'),
@@ -12,7 +12,7 @@ const plants = [
   
     {
       id: 2,
-      name: 'Dragon Plant',
+      name: 'COMTÉ AOP 12 MOIS',
       price: '29.99',
       like: false,
       img: require('../assets/cheeses/cheese2.png'),
@@ -22,7 +22,7 @@ const plants = [
     },
     {
       id: 3,
-      name: 'Ravenea Plant',
+      name: 'COMTÉ AOP 12 MOIS',
       price: '25.99',
       like: false,
       img: require('../assets/cheeses/cheese3.png'),
@@ -33,7 +33,7 @@ const plants = [
   
     {
       id: 4,
-      name: 'Potted Plant',
+      name: 'COMTÉ AOP 12 MOIS',
       price: '25.99',
       like: true,
       img: require('../assets/cheeses/cheese4.png'),
@@ -43,7 +43,7 @@ const plants = [
     },
     {
       id: 5,
-      name: 'Ravenea Plant',
+      name: 'COMTÉ AOP 12 MOIS',
       price: '50.99',
       like: true,
       img: require('../assets/cheeses/cheese5.png'),
@@ -53,7 +53,7 @@ const plants = [
     },
     {
       id: 6,
-      name: 'Dragon Plant',
+      name: 'COMTÉ AOP 12 MOIS',
       price: '50.99',
       like: false,
       img: require('../assets/cheeses/cheese6.png'),
