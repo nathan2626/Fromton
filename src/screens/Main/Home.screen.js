@@ -28,9 +28,7 @@ const isConnected = true;
 
 const Home = ({navigation}) => {
   return (
-    
-    <View >
-  
+    <View>
       <ScrollView>
       <LinearGradient
         style={{paddingTop: 42}}
@@ -189,7 +187,7 @@ const Home = ({navigation}) => {
 
 
         
-        <View style={{backgroundColor: 'red',  justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+        <View style={{marginTop: 10, backgroundColor: 'red',  justifyContent: 'center', alignItems: 'center', flex: 1 }}>
          <Text style={{color: 'white', textAlign: 'center', marginTop: 26, fontSize: 28, fontWeight: '500'}}>La selection</Text>
          <Image source={require('../../assets/onBoarding/logo-fromton-blanc.png')} style={{width: width*0.90, resizeMode: 'contain', padding: 0, marginTop: -220, marginBottom: -200, marginLeft: 32}} />
         </View>
@@ -308,8 +306,11 @@ const Home = ({navigation}) => {
           </Card>
         </ScrollView>
 
-        <View style={{backgroundColor: 'red',  justifyContent: 'center', alignItems: 'center', flex: 1, padding: 18 }}>
+        <View style={{backgroundColor: 'red',  justifyContent: 'center', alignItems: 'center', flex: 1, padding: 20 }}>
         </View>
+
+        <Text style={{textAlign: 'center', marginTop: 26, fontSize: 32, fontWeight: '600'}}>Une suggestion ?</Text>
+        <Text style={{textAlign: 'center', marginTop: 5, marginBottom: 52, fontSize: 18, fontWeight: '500'}}>Contactez le support !</Text>
 
         
       </ScrollView>
@@ -331,6 +332,6 @@ const styles = StyleSheet.create({
   },
   cardImgSty: {
     resizeMode: 'contain',
-    flex: 1
+    flex: 1,
   },
 });
