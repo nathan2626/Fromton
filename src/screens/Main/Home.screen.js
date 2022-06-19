@@ -1,202 +1,3 @@
-/*import React from 'react';
-import {
-  View,
-  SafeAreaView,
-  Text,
-  StyleSheet,
-  FlatList,
-  Image,
-  Dimensions,
-} from 'react-native';
-import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import COLORS from '../../consts/colors';
-import plants from '../../consts/plants';
-const width = Dimensions.get('window').width / 2 - 30;
-
-const Home = ({navigation}) => {
-  const [catergoryIndex, setCategoryIndex] = React.useState(0);
-
-  const categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
-
-  const CategoryList = () => {
-    return (
-      <View style={style.categoryContainer}>
-        {categories.map((item, index) => (
-          <TouchableOpacity
-            key={index}
-            activeOpacity={0.8}
-            onPress={() => setCategoryIndex(index)}>
-            <Text
-              style={[
-                style.categoryText,
-                catergoryIndex === index && style.categoryTextSelected,
-              ]}>
-              {item}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-    );
-  };
-
-  const Card = ({plant}) => {
-    return (
-      <TouchableOpacity
-        activeOpacity={0.8}
-        onPress={() => navigation.navigate('Cheeses', plant)}>
-        <View style={style.card}>
-          <View style={{alignItems: 'flex-end'}}>
-            <View
-              style={{
-                width: 30,
-                height: 30,
-                borderRadius: 20,
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: plant.like
-                  ? 'rgba(245, 42, 42,0.2)'
-                  : 'rgba(0,0,0,0.2) ',
-              }}>
-              <Text style={{fontSize: 18}}>❤️</Text>
-            </View>
-          </View>
-
-          <View
-            style={{
-              height: 100,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={plant.img}
-              style={{flex: 1, resizeMode: 'contain'}}
-            />
-          </View>
-
-          <Text style={{fontWeight: 'bold', fontSize: 17, marginTop: 10}}>
-            {plant.name}
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: 5,
-            }}>
-            <Text style={{fontSize: 19, fontWeight: 'bold'}}>
-              ${plant.price}
-            </Text>
-            <View
-              style={{
-                height: 25,
-                width: 25,
-                backgroundColor: COLORS.green,
-                borderRadius: 5,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{fontSize: 22, color: COLORS.white, fontWeight: 'bold'}}>
-                +
-              </Text>
-            </View>
-          </View>
-        </View>
-      </TouchableOpacity>
-    );
-  };
-  return (
-    <SafeAreaView
-      style={{flex: 1, paddingHorizontal: 20, backgroundColor: COLORS.white}}>
-      <View style={style.header}>
-        <View>
-          <Text style={{fontSize: 25, fontWeight: 'bold'}}>Welcome to</Text>
-          <Text style={{fontSize: 38, color: COLORS.green, fontWeight: 'bold'}}>
-            Plant Shop
-          </Text>
-        </View>
-        <Text style={{fontSize:18}}>🛒</Text>
-      </View>
-      <View style={{marginTop: 30, flexDirection: 'row'}}>
-        <View style={style.searchContainer}>
-          <Text style={{fontSize:18, marginLeft: 20}}>🔎</Text>
-          <TextInput placeholder="Search" style={style.input} />
-        </View>
-        <View style={style.sortBtn}>
-          <Text style={{fontSize:18}}>🚀</Text>
-        </View>
-      </View>
-      <CategoryList />
-      <FlatList
-        columnWrapperStyle={{justifyContent: 'space-between'}}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          marginTop: 10,
-          paddingBottom: 50,
-        }}
-        numColumns={2}
-        data={plants}
-        renderItem={({item}) => {
-          return <Card plant={item} />;
-        }}
-      />
-    </SafeAreaView>
-  );
-};
-
-const style = StyleSheet.create({
-  categoryContainer: {
-    flexDirection: 'row',
-    marginTop: 30,
-    marginBottom: 20,
-    justifyContent: 'space-between',
-  },
-  categoryText: {fontSize: 16, color: 'grey', fontWeight: 'bold'},
-  categoryTextSelected: {
-    color: COLORS.green,
-    paddingBottom: 5,
-    borderBottomWidth: 2,
-    borderColor: COLORS.green,
-  },
-  card: {
-    height: 225,
-    backgroundColor: COLORS.light,
-    width,
-    marginHorizontal: 2,
-    borderRadius: 10,
-    marginBottom: 20,
-    padding: 15,
-  },
-  header: {
-    marginTop: 30,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  searchContainer: {
-    height: 50,
-    backgroundColor: COLORS.light,
-    borderRadius: 10,
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  input: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    flex: 1,
-    color: COLORS.dark,
-  },
-  sortBtn: {
-    marginLeft: 10,
-    height: 50,
-    width: 50,
-    borderRadius: 10,
-    backgroundColor: COLORS.green,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-export default Home;*/
-
 import React, {Component} from 'react';
 import {
   StyleSheet, 
@@ -217,21 +18,75 @@ import {
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 
-const START_DEFAULT = {x: 0.5, y: 0};
-const END_DEFAULT = {x: 0.5, y: 1};
+const START_DEFAULT = {x: 0, y: 1};
+const END_DEFAULT = {x: 0.5, y: 0.5};
 const GRADIENT_COLORS = ['#fde000', '#dd4d11'];
-const GRADIENT_LOCATIONS = [0.1, 0.9, 0.9, 0.5];
+const GRADIENT_LOCATIONS = [0.9, 0.1, 0.5, 0.5];
 
 const {width, height} = Dimensions.get('window');
+const isConnected = true;
 
 const Home = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    
+    <View >
+  
       <ScrollView>
+      <LinearGradient
+        style={{paddingTop: 42}}
+        colors={GRADIENT_COLORS}
+        locations={GRADIENT_LOCATIONS}
+        start={START_DEFAULT}
+        end={END_DEFAULT}>  
+        <View style={{ paddingBottom: 15}}>
+          <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginLeft: 10, marginRight: 10}}>
+            <Text style={{fontSize: 26, color: 'white'}}>👤</Text>
+
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <Text style={{fontSize: 26}}>⭐️</Text>
+              <Text style={{fontSize: 26, textAlign: 'left'}}>☺️</Text>
+            </View>
+          </View>
+        </View>
+        </LinearGradient>
         
-        <Card style={{shadowColor: "#000", shadowOffset: {width: 0, height: 4,}, shadowOpacity: 0.30, shadowRadius: 4.65, elevation: 8, paddingTop:0, marginTop:10, borderRadius:13}}>
-            <View style={{display: 'flex', width: width, backgroundColor: "#fff"}}>
-              <Image source={require('../../assets/cheeses/cheese1.png')} style={{resizeMode: 'contain', flex: 1}} />
+        <Text style={{textAlign: 'center', marginTop: 26, fontSize: 32, fontWeight: '600'}}>Les choix du moment</Text>
+        
+        <Card style={{shadowColor: "#000", shadowOffset: {width: 0, height: 4,}, shadowOpacity: 0.30, shadowRadius: 4.65, elevation: 8, paddingTop:0, marginTop:10, marginBottom:20, borderRadius:13, borderWidth: 1, borderColor: "#F5F5F5", marginLeft: 7, marginRight:7}}>
+            <View style={{display: 'flex', width: width, backgroundColor: "#fff", justifyContent: 'center'}}>
+              <Image source={require('../../assets/cheeses/cheese1.png')} style={{width: width*0.90, resizeMode: 'contain', flex: 1}} />
+            </View>
+          
+            <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
+              <Text style={{fontSize: 22, fontWeight: '500', marginLeft:15}}>Comté 12 mois d'affinage</Text>
+              <Text style={{fontSize: 20, marginRight:35}}> 4.99€</Text>
+            </View>
+
+            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 2, marginBottom: 15}}>
+              <Text style={{color:'orange', fontStyle: 'italic', fontSize: 17, marginLeft: 15, textAlign: 'justify'}}>Comté 12 mois d'affinage</Text>
+            </View>
+
+            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                <Text style={{fontSize: 26, marginLeft: 15, marginRight: 5}}>4,9</Text>
+
+              <View style={{flex: 1}}>
+                <Text style={{fontSize: 14, textAlign: 'left'}}>⭐️⭐️⭐️⭐️⭐️</Text>
+                <Text style={{fontSize: 12, textAlign: 'left'}}> 479 Avis</Text>
+              </View>
+            </View>
+            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 15, marginBottom: 10}}>
+              <Text style={{color:'#989898', fontSize: 15, marginRight:35, marginLeft: 15, textAlign: 'justify'}}>Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.</Text>
+            </View>
+
+            <CardAction style={{flex: 1, justifyContent: 'space-between'}} separator={true} inColumn={false}>
+              <CardButton onPress={() => {}} title="➕" />
+              <CardButton style={{}} onPress={() => {}} title="PARTAGER" />
+              <CardButton style={{}} onPress={() => {}} title="❤️" />
+            </CardAction>
+        </Card>
+        <Card style={{shadowColor: "#000", shadowOffset: {width: 0, height: 4,}, shadowOpacity: 0.30, shadowRadius: 4.65, elevation: 8, paddingTop:0, marginTop:10, marginBottom:20, borderRadius:13, borderWidth: 1, borderColor: "#F5F5F5", marginLeft: 7, marginRight:7}}>
+            <View style={{display: 'flex', width: width, backgroundColor: "#fff", justifyContent: 'center'}}>
+              <Image source={require('../../assets/cheeses/cheese1.png')} style={{width: width*0.90, resizeMode: 'contain', flex: 1}} />
             </View>
           
             <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
@@ -262,9 +117,44 @@ const Home = ({navigation}) => {
             </CardAction>
         </Card>
 
-        <Card style={{shadowColor: "#000", shadowOffset: {width: 0, height: 4,}, shadowOpacity: 0.30, shadowRadius: 4.65, elevation: 8, paddingTop:0, marginTop:10, borderRadius:13}}>
-            <View style={{display: 'flex', width: width, backgroundColor: "#fff"}}>
-              <Image source={require('../../assets/cheeses/cheese1.png')} style={{resizeMode: 'contain', flex: 1}} />
+
+        <Text style={{textAlign: 'center', marginTop: 26, fontSize: 32, fontWeight: '600'}}>Les meilleurs choix de la communauté</Text>
+        
+        <Card style={{shadowColor: "#000", shadowOffset: {width: 0, height: 4,}, shadowOpacity: 0.30, shadowRadius: 4.65, elevation: 8, paddingTop:0, marginTop:10, marginBottom:20, borderRadius:13, borderWidth: 1, borderColor: "#F5F5F5", marginLeft: 7, marginRight:7}}>
+            <View style={{display: 'flex', width: width, backgroundColor: "#fff", justifyContent: 'center'}}>
+              <Image source={require('../../assets/cheeses/cheese1.png')} style={{width: width*0.90, resizeMode: 'contain', flex: 1}} />
+            </View>
+          
+            <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
+              <Text style={{fontSize: 22, fontWeight: '500', marginLeft:15}}>Comté 12 mois d'affinage</Text>
+              <Text style={{fontSize: 20, marginRight:35}}> 4.99€</Text>
+            </View>
+
+            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 2, marginBottom: 15}}>
+              <Text style={{color:'orange', fontStyle: 'italic', fontSize: 17, marginLeft: 15, textAlign: 'justify'}}>Comté 12 mois d'affinage</Text>
+            </View>
+
+            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                <Text style={{fontSize: 26, marginLeft: 15, marginRight: 5}}>4,9</Text>
+
+              <View style={{flex: 1}}>
+                <Text style={{fontSize: 14, textAlign: 'left'}}>⭐️⭐️⭐️⭐️⭐️</Text>
+                <Text style={{fontSize: 12, textAlign: 'left'}}> 479 Avis</Text>
+              </View>
+            </View>
+            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 15, marginBottom: 10}}>
+              <Text style={{color:'#989898', fontSize: 15, marginRight:35, marginLeft: 15, textAlign: 'justify'}}>Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.</Text>
+            </View>
+
+            <CardAction style={{flex: 1, justifyContent: 'space-between'}} separator={true} inColumn={false}>
+              <CardButton onPress={() => {}} title="➕" />
+              <CardButton style={{}} onPress={() => {}} title="PARTAGER" />
+              <CardButton style={{}} onPress={() => {}} title="❤️" />
+            </CardAction>
+        </Card>
+        <Card style={{shadowColor: "#000", shadowOffset: {width: 0, height: 4,}, shadowOpacity: 0.30, shadowRadius: 4.65, elevation: 8, paddingTop:0, marginTop:10, marginBottom:20, borderRadius:13, borderWidth: 1, borderColor: "#F5F5F5", marginLeft: 7, marginRight:7}}>
+            <View style={{display: 'flex', width: width, backgroundColor: "#fff", justifyContent: 'center'}}>
+              <Image source={require('../../assets/cheeses/cheese1.png')} style={{width: width*0.90, resizeMode: 'contain', flex: 1}} />
             </View>
           
             <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
@@ -295,42 +185,136 @@ const Home = ({navigation}) => {
             </CardAction>
         </Card>
 
-        <Card style={{shadowColor: "#000", shadowOffset: {width: 0, height: 4,}, shadowOpacity: 0.30, shadowRadius: 4.65, elevation: 8, paddingTop:0, marginTop:10, borderRadius:13}}>
-            <View style={{display: 'flex', width: width, backgroundColor: "#fff"}}>
-              <Image source={require('../../assets/cheeses/cheese1.png')} style={{resizeMode: 'contain', flex: 1}} />
-            </View>
-          
-            <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
-              <Text style={{fontSize: 22, fontWeight: '500', marginLeft:15}}>Comté 12 mois d'affinage</Text>
-              <Text style={{fontSize: 20, marginRight:35}}> 4.99€</Text>
-            </View>
 
-            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 2, marginBottom: 15}}>
-              <Text style={{color:'orange', fontStyle: 'italic', fontSize: 17, marginLeft: 15, textAlign: 'justify'}}>Comté 12 mois d'affinage</Text>
-            </View>
 
-            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={{fontSize: 26, marginLeft: 15, marginRight: 5}}>4,9</Text>
-
-              <View style={{flex: 1}}>
-                <Text style={{fontSize: 14, textAlign: 'left'}}>⭐️⭐️⭐️⭐️⭐️</Text>
-                <Text style={{fontSize: 12, textAlign: 'left'}}> 479 Avis</Text>
-              </View>
-            </View>
-            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 15, marginBottom: 10}}>
-              <Text style={{color:'#989898', fontSize: 15, marginRight:35, marginLeft: 15, textAlign: 'justify'}}>Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.</Text>
-            </View>
-
-            <CardAction style={{flex: 1, justifyContent: 'space-between'}} separator={true} inColumn={false}>
-              <CardButton onPress={() => {}} title="➕" />
-              <CardButton style={{}} onPress={() => {}} title="PARTAGER" />
-              <CardButton style={{}} onPress={() => {}} title="❤️" />
-            </CardAction>
-        </Card>
 
         
+        <View style={{backgroundColor: 'red',  justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+         <Text style={{color: 'white', textAlign: 'center', marginTop: 26, fontSize: 28, fontWeight: '500'}}>La selection</Text>
+         <Image source={require('../../assets/onBoarding/logo-fromton-blanc.png')} style={{width: width*0.90, resizeMode: 'contain', padding: 0, marginTop: -220, marginBottom: -200, marginLeft: 32}} />
+        </View>
+
+        <ScrollView style={{backgroundColor: 'red'}} horizontal nestedScrollEnabled={true}>
+          <Card style={{ margin: 10, borderRadius: 20, height: height/ 2, width: width /1.2, justifyContent: 'flex-start', alignItems: 'center' }}>
+          <Image source={require('../../assets/cheeses/cheese1.png')} style={{width: width / 2, height: height / 3.5, resizeMode: 'contain'}} />
+
+            <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
+              <Text style={{fontSize: 18, fontWeight: '500', marginLeft:45}}>Comté 12 mois d'affinage</Text>
+              <Text style={{fontSize: 20, marginRight:47}}> 4.99€</Text>
+            </View>
+
+            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 0, marginBottom: 10}}>
+              <Text style={{color:'orange', fontStyle: 'italic', fontSize: 15, marginLeft: 45, textAlign: 'justify'}}>Comté 12 mois d'affinage</Text>
+            </View>
+
+            <View style={{marginBottom: 15, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{fontSize: 26, marginLeft: 15, marginRight: 5}}>4,9</Text>
+
+              <View style={{flex: 1}}>
+                <Text style={{fontSize: 14, textAlign: 'left'}}>⭐️⭐️⭐️⭐️⭐️</Text>
+                <Text style={{fontSize: 12, textAlign: 'left'}}> 479 Avis</Text>
+              </View>
+            </View>
+
+            <CardAction style={{flex: 1, justifyContent: 'space-between'}} separator={true} inColumn={false}>
+              <CardButton onPress={() => {}} title="➕" />
+              <CardButton style={{marginLeft: 5}} onPress={() => {}} title="PARTAGER" />
+              <CardButton style={{marginRight: 5}} onPress={() => {}} title="❤️" />
+            </CardAction>
+          </Card>
+
+          <Card style={{ margin: 10, borderRadius: 20, height: height/ 2, width: width /1.2, justifyContent: 'flex-start', alignItems: 'center' }}>
+          <Image source={require('../../assets/cheeses/cheese1.png')} style={{width: width / 2, height: height / 3.5, resizeMode: 'contain'}} />
+
+            <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
+              <Text style={{fontSize: 18, fontWeight: '500', marginLeft:45}}>Comté 12 mois d'affinage</Text>
+              <Text style={{fontSize: 20, marginRight:47}}> 4.99€</Text>
+            </View>
+
+            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 0, marginBottom: 10}}>
+              <Text style={{color:'orange', fontStyle: 'italic', fontSize: 15, marginLeft: 45, textAlign: 'justify'}}>Comté 12 mois d'affinage</Text>
+            </View>
+
+            <View style={{marginBottom: 15, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{fontSize: 26, marginLeft: 15, marginRight: 5}}>4,9</Text>
+
+              <View style={{flex: 1}}>
+                <Text style={{fontSize: 14, textAlign: 'left'}}>⭐️⭐️⭐️⭐️⭐️</Text>
+                <Text style={{fontSize: 12, textAlign: 'left'}}> 479 Avis</Text>
+              </View>
+            </View>
+
+            <CardAction style={{flex: 1, justifyContent: 'space-between'}} separator={true} inColumn={false}>
+              <CardButton onPress={() => {}} title="➕" />
+              <CardButton style={{marginLeft: 5}} onPress={() => {}} title="PARTAGER" />
+              <CardButton style={{marginRight: 5}} onPress={() => {}} title="❤️" />
+            </CardAction>
+          </Card>
+
+          <Card style={{ margin: 10, borderRadius: 20, height: height/ 2, width: width /1.2, justifyContent: 'flex-start', alignItems: 'center' }}>
+          <Image source={require('../../assets/cheeses/cheese1.png')} style={{width: width / 2, height: height / 3.5, resizeMode: 'contain'}} />
+
+            <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
+              <Text style={{fontSize: 18, fontWeight: '500', marginLeft:45}}>Comté 12 mois d'affinage</Text>
+              <Text style={{fontSize: 20, marginRight:47}}> 4.99€</Text>
+            </View>
+
+            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 0, marginBottom: 10}}>
+              <Text style={{color:'orange', fontStyle: 'italic', fontSize: 15, marginLeft: 45, textAlign: 'justify'}}>Comté 12 mois d'affinage</Text>
+            </View>
+
+            <View style={{marginBottom: 15, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{fontSize: 26, marginLeft: 15, marginRight: 5}}>4,9</Text>
+
+              <View style={{flex: 1}}>
+                <Text style={{fontSize: 14, textAlign: 'left'}}>⭐️⭐️⭐️⭐️⭐️</Text>
+                <Text style={{fontSize: 12, textAlign: 'left'}}> 479 Avis</Text>
+              </View>
+            </View>
+
+            <CardAction style={{flex: 1, justifyContent: 'space-between'}} separator={true} inColumn={false}>
+              <CardButton onPress={() => {}} title="➕" />
+              <CardButton style={{marginLeft: 5}} onPress={() => {}} title="PARTAGER" />
+              <CardButton style={{marginRight: 5}} onPress={() => {}} title="❤️" />
+            </CardAction>
+          </Card>
+
+          <Card style={{ margin: 10, borderRadius: 20, height: height/ 2, width: width /1.2, justifyContent: 'flex-start', alignItems: 'center' }}>
+          <Image source={require('../../assets/cheeses/cheese1.png')} style={{width: width / 2, height: height / 3.5, resizeMode: 'contain'}} />
+
+            <View style={{maxWidth: width, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: width * 1, marginTop: 10}}>
+              <Text style={{fontSize: 18, fontWeight: '500', marginLeft:45}}>Comté 12 mois d'affinage</Text>
+              <Text style={{fontSize: 20, marginRight:47}}> 4.99€</Text>
+            </View>
+
+            <View style={{maxWidth: width, flex: 1, width: width * 1, marginTop: 0, marginBottom: 10}}>
+              <Text style={{color:'orange', fontStyle: 'italic', fontSize: 15, marginLeft: 45, textAlign: 'justify'}}>Comté 12 mois d'affinage</Text>
+            </View>
+
+            <View style={{marginBottom: 15, flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{fontSize: 26, marginLeft: 15, marginRight: 5}}>4,9</Text>
+
+              <View style={{flex: 1}}>
+                <Text style={{fontSize: 14, textAlign: 'left'}}>⭐️⭐️⭐️⭐️⭐️</Text>
+                <Text style={{fontSize: 12, textAlign: 'left'}}> 479 Avis</Text>
+              </View>
+            </View>
+
+            <CardAction style={{flex: 1, justifyContent: 'space-between'}} separator={true} inColumn={false}>
+              <CardButton onPress={() => {}} title="➕" />
+              <CardButton style={{marginLeft: 5}} onPress={() => {}} title="PARTAGER" />
+              <CardButton style={{marginRight: 5}} onPress={() => {}} title="❤️" />
+            </CardAction>
+          </Card>
+        </ScrollView>
+
+        <View style={{backgroundColor: 'red',  justifyContent: 'center', alignItems: 'center', flex: 1, padding: 18 }}>
+        </View>
+
         
       </ScrollView>
+
+     
     </View>
   );
 };

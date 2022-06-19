@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import OnboardingScreen from './src/screens/onBoarding/OnBoarding.screen';
@@ -14,11 +14,16 @@ import Search from './src/screens/Main/Search.screen';
 import Cheese from './src/screens/Main/Cheese.screen';
 import Cheeses from './src/screens/Main/Cheeses.screen';
 
+import BottomTabNavigator from './src/navigation/TabNavigators';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createStackNavigator();
 
 const App = () => {
+
+  const connected = true;
+
   const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(null);
   React.useEffect(async () => {
     const appData = await AsyncStorage.getItem('isAppFirstLaunched');
@@ -35,25 +40,21 @@ const App = () => {
   return (
     isAppFirstLaunched != null && (
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}}>
-          {isAppFirstLaunched && (
-            <Stack.Screen
-              name="OnboardingScreen"
-              component={OnboardingScreen}
-            />
-          )}
-          <Stack.Screen name="HomeRegistrationScreen" component={HomeRegistrationScreen} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Register" component={Register} />
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Categories" component={Categories} />
-          <Stack.Screen name="Scan" component={Scan} />
-          <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Search" component={Search} />
-          <Stack.Screen name="Cheese" component={Cheese} />
-          <Stack.Screen name="Cheeses" component={Cheeses} />
-
-        </Stack.Navigator>
+      {connected ? 
+        (<BottomTabNavigator/>)
+        :(
+          <Stack.Navigator screenOptions={{headerShown: false}}>
+            {isAppFirstLaunched && (
+              <Stack.Screen
+                name="OnboardingScreen"
+                component={OnboardingScreen}
+              />
+            )}
+            <Stack.Screen name="HomeRegistrationScreen" component={HomeRegistrationScreen} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Register" component={Register} />
+          </Stack.Navigator>
+        )}
       </NavigationContainer>
     )
   );
