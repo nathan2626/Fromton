@@ -3,8 +3,7 @@ import {View, SafeAreaView, Image, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../consts/colors';
 
-const Cheese = ({navigation, route}) => {
-  const plant = route.params;
+const Cheese = ({navigation}) => {
 
   return (
     <SafeAreaView
@@ -17,7 +16,7 @@ const Cheese = ({navigation, route}) => {
         <Text style={{fontSize:28}}>🛒</Text>
       </View>
       <View style={style.imageContainer}>
-        <Image source={plant.img} style={{resizeMode: 'contain', flex: 1}} />
+        <Image source={require('../../assets/cheeses/cheese1.png')} style={{resizeMode: 'contain', flex: 1}} />
       </View>
       <View style={style.detailsContainer}>
         <View
@@ -37,7 +36,7 @@ const Cheese = ({navigation, route}) => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 22, fontWeight: 'bold'}}>{plant.name}</Text>
+          <Text style={{fontSize: 22, fontWeight: 'bold'}}>Comté 12 mois d'affinage</Text>
           <View style={style.priceTag}>
             <Text
               style={{
@@ -46,7 +45,7 @@ const Cheese = ({navigation, route}) => {
                 fontWeight: 'bold',
                 fontSize: 16,
               }}>
-              ${plant.price}
+              4.99€
             </Text>
           </View>
         </View>
@@ -59,7 +58,7 @@ const Cheese = ({navigation, route}) => {
               lineHeight: 22,
               marginTop: 10,
             }}>
-            {plant.about}
+            Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.
           </Text>
           <View
             style={{
