@@ -48,7 +48,6 @@ const Home = ({navigation}) => {
         <CardFile />
         <CardFile />
 
-
         <View style={styles.ViewForTitleImg}>
           <Text style={styles.setTextSelection}>La selection</Text>
           <Image
@@ -65,7 +64,6 @@ const Home = ({navigation}) => {
           <CardSelectionFile />
           <CardSelectionFile />
           <CardSelectionFile />
-
         </ScrollView>
 
         <View style={styles.viewForRedBgAfterSelect} />

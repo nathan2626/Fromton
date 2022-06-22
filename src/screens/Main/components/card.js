@@ -16,10 +16,14 @@ import {
   CardImage,
 } from 'react-native-material-cards';
 //import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/core';
+
 import LinearGradient from 'react-native-linear-gradient';
 const {width, height} = Dimensions.get('window');
 
 export const CardFile = () => {
+    const navigation = useNavigation();
+
   return (
     <>
       <Card style={styles.setCardAll}>
