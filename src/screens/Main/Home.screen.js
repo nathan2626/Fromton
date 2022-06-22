@@ -6,6 +6,7 @@ import {
   ScrollView,
   Dimensions,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 import {
   Card,

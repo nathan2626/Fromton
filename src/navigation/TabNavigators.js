@@ -8,8 +8,9 @@ import {
   SearchStackNavigator,
 } from './StackNavigators';
 import {Text} from 'react-native';
-//import Icon from 'react-native-ionicons';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-ionicons';
+
+//import Icon from 'react-native-vector-icons/AntDesign';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,17 +25,17 @@ const BottomTabNavigator = () => {
           let iconName;
 
           if (route.name === 'TabHome') {
-            iconName = '⭐️';
+            iconName = 'home';
           } else if (route.name === 'TabCategories') {
-            iconName = '✌🏻';
+            iconName = 'apps';
           } else if (route.name === 'TabScan') {
-            iconName = '😊';
+            iconName = 'qr-scanner';
           } else if (route.name === 'TabSearch') {
-            iconName = '❤️';
+            iconName = 'search';
           } else if (route.name === 'TabProfile') {
-            iconName = '🚀';
+            iconName = 'person';
           }
-          return <Text>{iconName}</Text>/*<Icon name="search" />*/;
+          return <Icon name={iconName} />;
         },
         tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: 'black',

@@ -17,12 +17,32 @@ import {
 } from 'react-native-material-cards';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/core';
+import axios from 'axios';
 
 import LinearGradient from 'react-native-linear-gradient';
 const {width, height} = Dimensions.get('window');
 
+const baseUrl = 'http://127.0.0.1:8000';
+
+
 export const CardFile = () => {
-    const navigation = useNavigation();
+    // const navigation = useNavigation();
+
+    // const [cheeses, setCheeses] = React.useState([]);
+    // const getCheeses = () => {
+        
+    //     axios({
+    //         method: 'get',
+    //         url: `${baseUrl}/api/cheeses`,
+    //     }).then((response) => {
+    //         setCheeses(response.data);
+    //     })
+        
+    // };
+
+    // const ItemView= ({item}) => {
+        
+    // }
 
   return (
     <>
