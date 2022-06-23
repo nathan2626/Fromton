@@ -4,9 +4,6 @@ import {StyleSheet, Dimensions} from 'react-native';
 const {width, height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-  /* Fixed menu */
-
-
   /* Les choix du moment */
   titleChoiceMoment: {
     textAlign: 'center',

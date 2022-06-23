@@ -119,4 +119,5 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     flex: 1
   },
+  
 });
