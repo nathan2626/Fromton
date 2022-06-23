@@ -2,8 +2,12 @@ import React from 'react';
 import {View, SafeAreaView, Image, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../consts/colors';
+import { useNavigation } from '@react-navigation/core';
 
-const Cheese = ({navigation}) => {
+
+const Cheese = () => {
+
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView
@@ -12,7 +16,7 @@ const Cheese = ({navigation}) => {
         backgroundColor: COLORS.white,
       }}>
       <View style={style.header}>
-        <Text style={{fontSize:28}} onPress={() => navigation.goBack()}>⬅️</Text>
+        <Text style={{fontSize:28}} onPress={() => navigation.navigate('Home', { screen: 'Cheese' })}>⬅️</Text>
         <Text style={{fontSize:28}}>🛒</Text>
       </View>
       <View style={style.imageContainer}>

@@ -17,7 +17,7 @@ import {
 } from 'react-native-material-cards';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
-import Icon from 'react-native-ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const {width, height} = Dimensions.get('window');
 
@@ -40,7 +40,7 @@ export const MenuFile = () => {
             <Icon style={styles.setUserFixedMenu} name="person" />
 
             <View style={styles.viewRightAllFixedMenu}>
-              <Icon style={styles.setRightFixedMenu} name="heart" />
+              <Icon style={styles.setRightFixedMenu1} name="heart" />
               <Icon style={styles.setRightFixedMenu} name="search" />
             </View>
           </View>
@@ -65,15 +65,22 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   setUserFixedMenu: {
-    fontSize: 26,
+    fontSize: 32,
     color: 'white',
   },
   viewRightAllFixedMenu: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   setRightFixedMenu: {
-    fontSize: 26,
+    fontSize: 32,
+    color: 'white',
+  },
+  setRightFixedMenu1: {
+    fontSize: 32,
+    marginRight: 12,
+    color: 'white',
   },
 });
 

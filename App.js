@@ -22,7 +22,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
 
-  const connected = false;
+  const connected = true;
 
   const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(null);
   React.useEffect(async () => {

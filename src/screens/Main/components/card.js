@@ -16,36 +16,34 @@ import {
   CardImage,
 } from 'react-native-material-cards';
 //import Icon from 'react-native-vector-icons/FontAwesome';
-import { useNavigation } from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/core';
 import axios from 'axios';
-import Icon from 'react-native-ionicons';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import LinearGradient from 'react-native-linear-gradient';
 const {width, height} = Dimensions.get('window');
 
 const baseUrl = 'http://127.0.0.1:8000';
 
-
 export const CardFile = () => {
-    // const navigation = useNavigation();
+  // const navigation = useNavigation();
 
-    // const [cheeses, setCheeses] = React.useState([]);
-    // const getCheeses = () => {
-        
-    //     axios({
-    //         method: 'get',
-    //         url: `${baseUrl}/api/cheeses`,
-    //     }).then((response) => {
-    //         setCheeses(response.data);
-    //     })
-        
-    // };
+  // const [cheeses, setCheeses] = React.useState([]);
+  // const getCheeses = () => {
 
-    // const ItemView= ({item}) => {
-        
-    // }
-    const navigation = useNavigation();
+  //     axios({
+  //         method: 'get',
+  //         url: `${baseUrl}/api/cheeses`,
+  //     }).then((response) => {
+  //         setCheeses(response.data);
+  //     })
+
+  // };
+
+  // const ItemView= ({item}) => {
+
+  // }
+  const navigation = useNavigation();
 
   return (
     <>
@@ -70,7 +68,33 @@ export const CardFile = () => {
           <Text style={styles.setTextNotation}>4,9</Text>
 
           <View style={styles.viewReviewsCard}>
-            <Text style={styles.setStarsReviewsCard}>⭐️⭐️⭐️⭐️⭐️</Text>
+            <Text style={styles.setStarsReviewsCard}>
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+            </Text>
             <Text style={styles.setTextReviewsCard}> 479 Avis</Text>
           </View>
         </View>
@@ -85,9 +109,20 @@ export const CardFile = () => {
         </View>
 
         <CardAction style={styles.cardAction} separator={true} inColumn={false}>
-          <Icon style={styles.setLeftFixedMenu} onPress={() => navigation.replace('Cheese')} name="add" />
-          <Text style={styles.setRightFixedMenu}>PARTAGER</Text>
-          <Icon style={styles.setRightFixedMenu} name="heart" />
+          <Icon
+            color={'green'}
+            size={32}
+            style={styles.setLeftFixedMenu}
+            onPress={() => navigation.replace('Cheese')}
+            name="add"
+          />
+          <Text>PARTAGER</Text>
+          <Icon
+            color={'red'}
+            size={32}
+            style={styles.setRightFixedMenu}
+            name="heart"
+          />
         </CardAction>
       </Card>
     </>
@@ -140,7 +175,10 @@ const styles = StyleSheet.create({
     marginRight: 35,
   },
   setLeftFixedMenu: {
-    marginLeft: 5,
+    marginLeft: 15,
+  },
+  setRightFixedMenu: {
+    marginRight: 15,
   },
   viewForSubtitleCard: {
     maxWidth: width,
@@ -195,6 +233,8 @@ const styles = StyleSheet.create({
   cardAction: {
     flex: 1,
     justifyContent: 'space-between',
+    paddingBottom: 10,
+    paddingTop: 10,
   },
 });
 

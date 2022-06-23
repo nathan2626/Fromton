@@ -24,23 +24,32 @@ const GRADIENT_LOCATIONS = [0.1, 0.9, 0.9, 0.5];
 
 const Login = ({navigation}) => {
   return (
-    <ScrollView style={styles.allScrollView} showsVerticalScrollIndicator={false}>
+    <ScrollView
+      style={styles.allScrollView}
+      showsVerticalScrollIndicator={false}>
       <TopLogo />
 
       <View style={styles.bottomView}>
         <View style={styles.fixPaddingViewText}>
-
           <Text style={styles.setTextHome}>Bienvenue</Text>
-          <Text>Pas encore de compte ? 
-            <Text style={styles.setNotAccount}   onPress={() => navigation.replace('Register')}>
-              {' '} S'enregister
-             </Text>
+          <Text>
+            Pas encore de compte ?
+            <Text
+              style={styles.setNotAccount}
+              onPress={() => navigation.replace('Register')}>
+              {' '}
+              S'enregister
+            </Text>
           </Text>
 
           <View style={styles.setViewIdentity}>
             <View style={styles.setViewEmail}>
               <Text style={styles.setLabel}>Email</Text>
-              <TextInput style={styles.setInput} value="nathanjourno@yahoo.fr" keyboardType='email-address' />
+              <TextInput
+                style={styles.setInput}
+                value="nathanjourno@yahoo.fr"
+                keyboardType="email-address"
+              />
             </View>
 
             <View style={styles.setViewMdp}>
@@ -49,7 +58,9 @@ const Login = ({navigation}) => {
             </View>
 
             <View style={styles.setViewButton}>
-              <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.replace('Home')}>
+              <TouchableOpacity
+                style={styles.loginBtn}
+                onPress={() => navigation.replace('Home')}>
                 <Text style={styles.textButtonLogin}>Se connecter</Text>
               </TouchableOpacity>
             </View>
@@ -58,23 +69,23 @@ const Login = ({navigation}) => {
               <Text style={{}}> ou connectez-vous avec</Text>
             </View>
             <View style={styles.setTextOrConnect}>
-              <TouchableOpacity
-                style={styles.button2}>
-                <Image source={require('../../assets/facebook.png')} style={styles.icon} />
+              <TouchableOpacity style={styles.button2}>
+                <Image
+                  source={require('../../assets/facebook.png')}
+                  style={styles.icon}
+                />
               </TouchableOpacity>
 
-              <TouchableOpacity
-                style={styles.buttonGoogle}>
-                <Image source={require('../../assets/google.png')} style={styles.icon} />
+              <TouchableOpacity style={styles.buttonGoogle}>
+                <Image
+                  source={require('../../assets/google.png')}
+                  style={styles.icon}
+                />
               </TouchableOpacity>
-
             </View>
-
           </View>
-
         </View>
       </View>
-
     </ScrollView>
   );
 };

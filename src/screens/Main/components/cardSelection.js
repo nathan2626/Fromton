@@ -16,7 +16,7 @@ import {
   CardImage,
 } from 'react-native-material-cards';
 import { useNavigation } from '@react-navigation/core';
-import Icon from 'react-native-ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 const {width, height} = Dimensions.get('window');
 
@@ -46,18 +46,53 @@ export const CardSelectionFile = () => {
           <Text style={styles.textNotationSelectCard}>4,9</Text>
 
           <View style={styles.viewForRatingSelect}>
-            <Text style={styles.setTextStarsSelect}>⭐️⭐️⭐️⭐️⭐️</Text>
+            <Text style={styles.setTextStarsSelect}>
+            
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+              <Icon
+                name="star"
+                color={'gold'}
+                style={styles.setStarsReviewsCard}
+              />
+            </Text>
             <Text style={styles.setTextReviewsSelect}> 479 Avis</Text>
           </View>
         </View>
 
-        <CardAction
-          style={styles.setActionCardSlect}
-          separator={true}
-          inColumn={false}>
-          <Icon style={styles.fixPlusSelection} onPress={() => navigation.replace('Cheese')} name="add" />
-          <Text style={styles.fixShareSelection}>PARTAGER</Text>
-          <Icon style={styles.fixFavSelection} name="heart" />
+        <CardAction style={styles.cardAction} separator={true} inColumn={false}>
+          <Icon
+            color={'green'}
+            size={32}
+            style={styles.setLeftFixedMenu}
+            onPress={() => navigation.replace('Cheese')}
+            name="add"
+          />
+          <Text>PARTAGER</Text>
+          <Icon
+            color={'red'}
+            size={32}
+            style={styles.setRightFixedMenu}
+            name="heart"
+          />
         </CardAction>
       </Card>
     </>
@@ -95,6 +130,18 @@ const styles = StyleSheet.create({
   setPriceCardSelection: {
     fontSize: 20,
     marginRight: 47,
+  },
+  cardAction: {
+    flex: 1,
+    justifyContent: 'space-between',
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  setLeftFixedMenu: {
+    marginLeft: 15,
+  },
+  setRightFixedMenu: {
+    marginRight: 15,
   },
   setViewItalic: {
     maxWidth: width,
@@ -145,6 +192,10 @@ const styles = StyleSheet.create({
   },
   fixPlusSelection: {
     marginLeft: 9,
+  },
+  setStarsReviewsCard: {
+    fontSize: 18,
+    textAlign: 'left',
   },
 });
 
