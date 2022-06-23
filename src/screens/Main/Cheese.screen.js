@@ -12,7 +12,8 @@ import {useNavigation} from '@react-navigation/core';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {ScrollView} from 'react-native-gesture-handler';
 import RecipeResume from './components/recipeResume';
-
+import MenuCheese from './components/menuCheese';
+import styles from './Cheese.styles';
 import LinearGradient from 'react-native-linear-gradient';
 
 const START_DEFAULT = {x: 0, y: 1};
@@ -27,132 +28,82 @@ const Cheese = () => {
 
   return (
     <>
-      <LinearGradient
-        colors={GRADIENT_COLORS}
-        locations={GRADIENT_LOCATIONS}
-        start={START_DEFAULT}
-        end={END_DEFAULT}>
-        <View style={style.header}>
-          <Icon
-            name="arrow-back"
-            style={{fontSize: 32}}
-            onPress={() => navigation.navigate('Home', {screen: 'Cheese'})}
-          />
-          <Icon name="cart" style={{fontSize: 32}} />
-        </View>
-      </LinearGradient>
+      <MenuCheese />
 
-    <ScrollView
-        style={{
-          flex: 1,
-          backgroundColor: COLORS.white,
-        }}>
-    <View style={style.imageContainer}>
+      <ScrollView
+        style={styles.setScrollViewAll}>
+        <View style={styles.imageContainer}>
           <Image
             source={require('../../assets/cheeses/cheese1.png')}
-            style={{resizeMode: 'contain', flex: 1}}
+            style={styles.setImgResize}
           />
         </View>
         <View>
           <Text
-            style={{
-              textAlign: 'center',
-              marginTop: 10,
-              backgroundColor: 'red',
-              color: '#fff',
-              fontWeight: '500',
-              fontStyle: 'italic',
-              padding: 10,
-            }}>
+            style={styles.setCategoryTitle}>
             Franche-Comté
           </Text>
         </View>
-        <View style={style.detailsContainer}>
+        <View style={styles.detailsContainer}>
           <View
-            style={{
-              marginLeft: 20,
-              flexDirection: 'row',
-              alignItems: 'flex-end',
-            }}>
+            style={styles.setViewSubtitleCheese}>
             <Text
-              style={{
-                fontSize: 16,
-                fontWeight: '400',
-                maxWidth: 300,
-                color: 'orange',
-                fontStyle: 'italic',
-              }}>
+              style={styles.setSubtitleCheese}>
               Comté 12 mois d'affinage
             </Text>
           </View>
           <View
-            style={{
-              marginLeft: 20,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}>
-            <Text style={{fontSize: 22, fontWeight: 'bold', maxWidth: 270}}>
+            style={styles.setViewTitleCheese}>
+            <Text style={styles.setTitleCheese}>
               Comté 12 mois d'affinage
             </Text>
-            <View style={style.priceTag}>
+            <View style={styles.priceTag}>
               <Text
-                style={{
-                  marginLeft: 15,
-                  color: COLORS.white,
-                  fontWeight: 'bold',
-                  fontSize: 16,
-                }}>
+                style={styles.setPriceCheese}>
                 4.99€
               </Text>
             </View>
           </View>
-          <View style={style.viewAllNotation}>
-            <Text style={style.setTextNotation}>4,9</Text>
+          <View style={styles.viewAllNotation}>
+            <Text style={styles.setTextNotation}>4,9</Text>
 
-            <View style={style.viewReviewsCard}>
-              <Text style={style.setStarsReviewsCard}>
+            <View style={styles.viewReviewsCard}>
+              <Text style={styles.setStarsReviewsCard}>
                 <Icon
                   name="star"
                   color={'gold'}
-                  style={style.setStarsReviewsCard}
+                  style={styles.setStarsReviewsCard}
                 />
                 <Icon
                   name="star"
                   color={'gold'}
-                  style={style.setStarsReviewsCard}
+                  style={styles.setStarsReviewsCard}
                 />
                 <Icon
                   name="star"
                   color={'gold'}
-                  style={style.setStarsReviewsCard}
+                  style={styles.setStarsReviewsCard}
                 />
                 <Icon
                   name="star"
                   color={'gold'}
-                  style={style.setStarsReviewsCard}
+                  style={styles.setStarsReviewsCard}
                 />
                 <Icon
                   name="star"
                   color={'gold'}
-                  style={style.setStarsReviewsCard}
+                  style={styles.setStarsReviewsCard}
                 />
               </Text>
-              <Text style={style.setTextReviewsCard}> 479 Avis</Text>
+              <Text style={styles.setTextReviewsCard}> 479 Avis</Text>
             </View>
           </View>
-          <View style={{paddingHorizontal: 20, marginTop: 15}}>
-            <Text style={{fontSize: 19, fontWeight: 'bold'}}>
+          <View style={styles.viewForPadding}>
+            <Text style={styles.setLabelInfo}>
               Informations :
             </Text>
             <Text
-              style={{
-                color: 'grey',
-                fontSize: 16,
-                lineHeight: 22,
-                marginTop: 5,
-                textAlign: 'justify',
-              }}>
+              style={styles.setLabelDescription}>
               Potted Plant Ravenea Plant one of the most popular and beautiful
               species that will produce clumpms. The storage of water often
               gives succulent plants a more swollen or fleshy appearance than
@@ -160,105 +111,59 @@ const Cheese = () => {
               Ravenea Plant one of the most popular.
             </Text>
 
-          <View style={{marginTop: 10}}>
+            <View style={styles.setViewAllLabels}>
               <Text
-                style={{
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: 18,
-                }}>
+                style={styles.setLabelForInf}>
                 Lait de :{' '}
                 <Text
-                  style={{
-                    color: 'orange',
-                    fontWeight: '500',
-                    fontSize: 15,
-                    fontStyle: 'italic',
-                  }}>
+                  style={styles.setAnswInf}>
                   Vache
                 </Text>{' '}
               </Text>
               <Text
-                style={{
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: 18,
-                }}>
+                style={styles.setLabelForInf}>
                 Affinage :{' '}
                 <Text
-                  style={{
-                    color: 'orange',
-                    fontWeight: '500',
-                    fontSize: 15,
-                    fontStyle: 'italic',
-                  }}>
+                  style={styles.setAnswInf}>
                   2 mois
                 </Text>{' '}
               </Text>
               <Text
-                style={{
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: 18,
-                }}>
+                style={styles.setLabelForInf}>
                 Poids :{' '}
                 <Text
-                  style={{
-                    color: 'orange',
-                    fontWeight: '500',
-                    fontSize: 15,
-                    fontStyle: 'italic',
-                  }}>
+                  style={styles.setAnswInf}>
                   500g
                 </Text>{' '}
               </Text>
               <Text
-                style={{
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: 18,
-                }}>
+                style={styles.setLabelForInf}>
                 Pâte :{' '}
                 <Text
-                  style={{
-                    color: 'orange',
-                    fontWeight: '500',
-                    fontSize: 15,
-                    fontStyle: 'italic',
-                  }}>
+                  style={styles.setAnswInf}>
                   Pâte molle à croûte fleurie
                 </Text>{' '}
               </Text>
             </View>
 
-            <Text style={{fontSize: 19, fontWeight: 'bold', marginTop: 20}}>
+            <Text style={styles.wineChoose}>
               Quel vin choisir ?
             </Text>
             <Text
-              style={{
-                color: 'grey',
-                fontSize: 16,
-                lineHeight: 22,
-                marginTop: 4,
-                textAlign: 'justify',
-              }}>
+              style={styles.perfectWine}>
               Le vin parfait pour le Comté 12 mois d'affinage est le{' '}
-              <Text style={{color: 'orange', fontWeight: '500'}}>
+              <Text style={styles.wineSpecial}>
                 Vin jaune
               </Text>
               .
             </Text>
 
-            <Text style={{fontSize: 19, fontWeight: 'bold', marginTop: 20}}>
+            <Text style={styles.recipeLink}>
               Recettes liées au fromage :
             </Text>
 
-        <ScrollView
-              style={style.setScrollViewNews}
+            <ScrollView
+              style={styles.setScrollViewNews}
               horizontal
               nestedScrollEnabled={true}>
               <RecipeResume />
@@ -268,23 +173,11 @@ const Cheese = () => {
             </ScrollView>
 
             <Text
-              style={{
-                textAlign: 'center',
-                fontSize: 19,
-                fontWeight: 'bold',
-                marginTop: 20,
-              }}>
+              style={styles.setTexteQuestion}>
               Une question ?
             </Text>
             <Text
-              style={{
-                color: 'grey',
-                fontSize: 16,
-                lineHeight: 22,
-                marginTop: 4,
-                textAlign: 'center',
-                paddingBottom: 20,
-              }}>
+              style={styles.setTexteSupport}>
               Contactez le support !
             </Text>
           </View>
@@ -293,119 +186,5 @@ const Cheese = () => {
     </>
   );
 };
-
-const style = StyleSheet.create({
-  header: {
-    paddingHorizontal: 20,
-    paddingTop: 40,
-    paddingBottom: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  setScrollViewNews: {
-    width: width,
-    padding: 0,
-    marginLeft: -9,
-  },
-  viewForGreenBgAfterSelect: {
-    backgroundColor: 'green',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-    padding: 20,
-  },
-  ViewForTitleImgNews: {
-    marginTop: 10,
-    backgroundColor: 'green',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-  },
-  setTextSelection: {
-    color: 'white',
-    textAlign: 'center',
-    marginTop: 26,
-    fontSize: 28,
-    fontWeight: '500',
-  },
-  setImgSelection: {
-    width: width * 0.9,
-    resizeMode: 'contain',
-    padding: 0,
-    marginTop: -220,
-    marginBottom: -200,
-    marginLeft: 32,
-  },
-  imageContainer: {
-    flex: 0.8,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  detailsContainer: {
-    flex: 0.55,
-    backgroundColor: COLORS.light,
-    marginHorizontal: 7,
-    marginBottom: 7,
-    borderRadius: 20,
-    marginTop: 10,
-    paddingTop: 26,
-  },
-  line: {
-    width: 25,
-    height: 2,
-    backgroundColor: COLORS.dark,
-    marginBottom: 5,
-    marginRight: 3,
-  },
-  borderBtn: {
-    borderColor: 'grey',
-    borderWidth: 1,
-    borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 60,
-    height: 40,
-  },
-  borderBtnText: {fontWeight: 'bold', fontSize: 28},
-  buyBtn: {
-    width: 130,
-    height: 50,
-    backgroundColor: COLORS.green,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 30,
-  },
-  priceTag: {
-    backgroundColor: 'orange',
-    width: 80,
-    height: 40,
-    justifyContent: 'center',
-    borderTopLeftRadius: 25,
-    borderBottomLeftRadius: 25,
-  },
-  viewAllNotation: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: 5,
-  },
-  setTextNotation: {
-    fontSize: 26,
-    marginLeft: 15,
-    marginRight: 5,
-  },
-  viewReviewsCard: {
-    flex: 1,
-  },
-  setStarsReviewsCard: {
-    fontSize: 14,
-    textAlign: 'left',
-  },
-  setTextReviewsCard: {
-    fontSize: 12,
-    textAlign: 'left',
-  },
-});
 
 export default Cheese;

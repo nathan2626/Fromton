@@ -15,14 +15,15 @@ import {
   CardButton,
   CardImage,
 } from 'react-native-material-cards';
-import { useNavigation } from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/core';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 const {width, height} = Dimensions.get('window');
 
 export const RecipeResume = () => {
   const navigation = useNavigation();
-  const TitleRecipe = 'MINI QUICHES À L’AUBERGINE GRILLÉE ET LA TOME DE PROVENCE';
+  const TitleRecipe =
+    'MINI QUICHES À L’AUBERGINE GRILLÉE ET LA TOME DE PROVENCE';
 
   return (
     <>
@@ -34,7 +35,9 @@ export const RecipeResume = () => {
 
         <View style={styles.viewForTitleAndPriceCardSelection}>
           <Text style={styles.setTitleCardSelection}>
-            { TitleRecipe.length > 30 ? TitleRecipe.substring(0, 30) + '...' : TitleRecipe }
+            {TitleRecipe.length > 30
+              ? TitleRecipe.substring(0, 30) + '...'
+              : TitleRecipe}
           </Text>
         </View>
 
@@ -46,8 +49,6 @@ export const RecipeResume = () => {
           <Text style={styles.textNotationSelectCard}>6</Text>
 
           <View style={styles.viewForRatingSelect}>
-            
-            
             <Text style={styles.setTextReviewsSelect}> Personnes</Text>
           </View>
         </View>
@@ -169,7 +170,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   fixPlusSelection: {
-    marginLeft: 6,
+    marginLeft: 5,
   },
   setStarsReviewsCard: {
     fontSize: 18,
