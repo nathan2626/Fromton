@@ -17,6 +17,8 @@ import {
 } from 'react-native-material-cards';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-ionicons';
+
 const {width, height} = Dimensions.get('window');
 
 const START_DEFAULT = {x: 0, y: 1};
@@ -35,11 +37,11 @@ export const MenuFile = () => {
         end={END_DEFAULT}>
         <View style={styles.viewAllFixedMenu}>
           <View style={styles.viewUserAllFixedMenu}>
-            <Text style={styles.setUserFixedMenu}>👤</Text>
+            <Icon style={styles.setUserFixedMenu} name="person" />
 
             <View style={styles.viewRightAllFixedMenu}>
-              <Text style={styles.setRightFixedMenu}>⭐️</Text>
-              <Text style={styles.setRightFixedMenu}>☺️</Text>
+              <Icon style={styles.setRightFixedMenu} name="heart" />
+              <Icon style={styles.setRightFixedMenu} name="search" />
             </View>
           </View>
         </View>

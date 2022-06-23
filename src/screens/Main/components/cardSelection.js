@@ -16,12 +16,12 @@ import {
   CardImage,
 } from 'react-native-material-cards';
 import { useNavigation } from '@react-navigation/core';
-//import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 const {width, height} = Dimensions.get('window');
 
 export const CardSelectionFile = () => {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
   return (
     <>
@@ -55,17 +55,9 @@ export const CardSelectionFile = () => {
           style={styles.setActionCardSlect}
           separator={true}
           inColumn={false}>
-          <CardButton onPress={() => navigation.replace('Cheese')} title="➕" />
-          <CardButton
-            style={styles.fixShareSelection}
-            onPress={() => {}}
-            title="PARTAGER"
-          />
-          <CardButton
-            style={styles.fixFavSelection}
-            onPress={() => {}}
-            title="❤️"
-          />
+          <Icon style={styles.fixPlusSelection} onPress={() => navigation.replace('Cheese')} name="add" />
+          <Text style={styles.fixShareSelection}>PARTAGER</Text>
+          <Icon style={styles.fixFavSelection} name="heart" />
         </CardAction>
       </Card>
     </>
@@ -146,10 +138,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   fixShareSelection: {
-    marginLeft: 5,
+    marginLeft: 0,
   },
   fixFavSelection: {
     marginRight: 5,
+  },
+  fixPlusSelection: {
+    marginLeft: 9,
   },
 });
 

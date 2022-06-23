@@ -100,6 +100,66 @@ const styles = StyleSheet.create({
     /*textAlign: 'center',
 		flex:1*/
   },
+  allScrollView: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+  },
+  fixPaddingViewText: {
+    padding: 40,
+  },
+  setTextHome: {
+    color: '#dd4d11',
+    fontSize: 34,
+  },
+  setNotAccount : {
+    color: '#dd4d11',
+    fontStyle: 'italic',
+  },
+  setViewIdentity: {
+    marginTop: 50,
+  },
+  setViewEmail: {
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderColor: '#fde000',
+  },
+  setViewMdp: {
+    paddingBottom: 5,
+    marginTop: 28,
+    borderBottomWidth: 1,
+    borderColor: '#fde000',
+  },
+  setViewButton: {
+    height:100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 32,
+  },
+  textButtonLogin: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  setLabel: {
+    color: 'grey',
+    paddingBottom: 3,
+    fontSize: 16,
+  },
+  setInput: {
+    fontSize: 14,
+  },
+  setTextOrConnect: {
+    textAlign: 'center',
+    fontWeight: '700',
+    marginBottom: 26,
+    marginTop: 20,
+  },
+  setViewButtonRegister: {
+    height:100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 32,
+  }
 });
 
 export default styles;

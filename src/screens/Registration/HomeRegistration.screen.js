@@ -11,6 +11,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './HomeRegistration.styles';
 const {width, height} = Dimensions.get('window');
 
+
 const START_DEFAULT = {x: 0.5, y: 0};
 const END_DEFAULT = {x: 0.5, y: 1};
 const GRADIENT_COLORS = ['#fde000', '#dd4d11'];

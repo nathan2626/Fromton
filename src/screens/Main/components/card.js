@@ -18,6 +18,8 @@ import {
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/core';
 import axios from 'axios';
+import Icon from 'react-native-ionicons';
+
 
 import LinearGradient from 'react-native-linear-gradient';
 const {width, height} = Dimensions.get('window');
@@ -43,6 +45,7 @@ export const CardFile = () => {
     // const ItemView= ({item}) => {
         
     // }
+    const navigation = useNavigation();
 
   return (
     <>
@@ -82,9 +85,9 @@ export const CardFile = () => {
         </View>
 
         <CardAction style={styles.cardAction} separator={true} inColumn={false}>
-          <CardButton onPress={() => navigation.replace('Cheese')} title="➕" />
-          <CardButton style={{}} onPress={() => {}} title="PARTAGER" />
-          <CardButton style={{}} onPress={() => {}} title="❤️" />
+          <Icon style={styles.setLeftFixedMenu} onPress={() => navigation.replace('Cheese')} name="add" />
+          <Text style={styles.setRightFixedMenu}>PARTAGER</Text>
+          <Icon style={styles.setRightFixedMenu} name="heart" />
         </CardAction>
       </Card>
     </>
@@ -135,6 +138,9 @@ const styles = StyleSheet.create({
   setPriceCard: {
     fontSize: 20,
     marginRight: 35,
+  },
+  setLeftFixedMenu: {
+    marginLeft: 5,
   },
   viewForSubtitleCard: {
     maxWidth: width,
