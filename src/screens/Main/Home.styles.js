@@ -5,30 +5,7 @@ const {width, height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   /* Fixed menu */
-  fixedPaddingLinear: {
-    paddingTop: 42,
-  },
-  viewAllFixedMenu: {
-    paddingBottom: 15,
-  },
-  viewUserAllFixedMenu: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  setUserFixedMenu: {
-    fontSize: 26,
-    color: 'white',
-  },
-  viewRightAllFixedMenu: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  setRightFixedMenu: {
-    fontSize: 26,
-  },
+
 
   /* Les choix du moment */
   titleChoiceMoment: {
@@ -42,6 +19,13 @@ const styles = StyleSheet.create({
   ViewForTitleImg: {
     marginTop: 10,
     backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  ViewForTitleImgNews: {
+    marginTop: 10,
+    backgroundColor: 'green',
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
@@ -64,8 +48,18 @@ const styles = StyleSheet.create({
   setScrollViewSelection: {
     backgroundColor: 'red',
   },
+  setScrollViewNews: {
+    backgroundColor: 'green',
+  },
   viewForRedBgAfterSelect: {
     backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    padding: 20,
+  },
+  viewForGreenBgAfterSelect: {
+    backgroundColor: 'green',
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,

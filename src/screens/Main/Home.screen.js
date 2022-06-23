@@ -42,6 +42,25 @@ const Home = ({navigation}) => {
         <CardFile />
         <CardFile />
 
+        <View style={styles.ViewForTitleImgNews}>
+          <Text style={styles.setTextSelection}>Les nouveautés</Text>
+          <Image
+            source={require('../../assets/onBoarding/logo-fromton-blanc.png')}
+            style={styles.setImgSelection}
+          />
+        </View>
+        <ScrollView
+          style={styles.setScrollViewNews}
+          horizontal
+          nestedScrollEnabled={true}>
+          <CardSelectionFile />
+          <CardSelectionFile />
+          <CardSelectionFile />
+          <CardSelectionFile />
+        </ScrollView>
+        <View style={styles.viewForGreenBgAfterSelect} />
+
+
         <Text style={styles.titleChoiceMoment}>
           Les meilleurs choix de la communauté
         </Text>
