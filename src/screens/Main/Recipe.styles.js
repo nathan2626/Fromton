@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     flex: 0.55,
-    backgroundColor: '#fff',
+    backgroundColor: '#fffs',
     marginHorizontal: 7,
     marginBottom: 7,
     borderRadius: 20,
