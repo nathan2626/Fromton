@@ -21,7 +21,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const Stack = createStackNavigator();
 
 const App = () => {
-
   const connected = true;
 
   const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(null);
@@ -40,9 +39,9 @@ const App = () => {
   return (
     isAppFirstLaunched != null && (
       <NavigationContainer>
-      {connected ? 
-        (<BottomTabNavigator/>)
-        :(
+        {connected ? (
+          <BottomTabNavigator />
+        ) : (
           <Stack.Navigator screenOptions={{headerShown: false}}>
             {isAppFirstLaunched && (
               <Stack.Screen
@@ -50,7 +49,10 @@ const App = () => {
                 component={OnboardingScreen}
               />
             )}
-            <Stack.Screen name="HomeRegistrationScreen" component={HomeRegistrationScreen} />
+            <Stack.Screen
+              name="HomeRegistrationScreen"
+              component={HomeRegistrationScreen}
+            />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Register} />
           </Stack.Navigator>

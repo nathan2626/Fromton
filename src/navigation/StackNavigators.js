@@ -7,6 +7,7 @@ import Scan from '../screens/Main/Scan.screen';
 import Categories from '../screens/Main/Categories.screen';
 import Profile from '../screens/Main/Profile.screen';
 import Cheese from '../screens/Main/Cheese.screen';
+import Recipe from '../screens/Main/Recipe.screen';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,8 @@ const HomeStackNavigator = () => {
       <Stack.Screen name="Cheese" component={Cheese} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Categories" component={Categories} />
+      <Stack.Screen name="Recipe" component={Recipe} />
+
     </Stack.Navigator>
   );
 };
@@ -45,6 +48,7 @@ const CategoriesStackNavigator = () => {
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Cheese" component={Cheese} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Recipe" component={Recipe} />
 
     </Stack.Navigator>
   );
@@ -60,6 +64,8 @@ const ScanStackNavigator = () => {
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Cheese" component={Cheese} />
+      <Stack.Screen name="Recipe" component={Recipe} />
+
     </Stack.Navigator>
   );
 };
@@ -75,6 +81,8 @@ const SearchStackNavigator = () => {
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Recipe" component={Recipe} />
+
 
     </Stack.Navigator>
   );

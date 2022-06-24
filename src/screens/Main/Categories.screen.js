@@ -22,11 +22,14 @@ const GRADIENT_LOCATIONS = [0.1, 0.9, 0.9, 0.5];
 
 const Categories = ({navigation}) => {
   return (
-    <ScrollView style={{flex: 1, backgroundColor:'#ffffff'}} showsVerticalScrollIndicator={false}>
-    <View style={styles.container}>
-      <Text style={{ marginTop: 50, textAlign: 'center'}}>Categories page</Text>
-    </View>
-
+    <ScrollView
+      style={{flex: 1, backgroundColor: '#ffffff'}}
+      showsVerticalScrollIndicator={false}>
+      <View style={styles.container}>
+        <Text style={{marginTop: 50, textAlign: 'center'}}>
+          Categories page
+        </Text>
+      </View>
     </ScrollView>
   );
 };

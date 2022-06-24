@@ -58,7 +58,7 @@ export const RecipeResume = () => {
             color={'green'}
             size={32}
             style={styles.setLeftFixedMenu}
-            onPress={() => navigation.replace('Cheese')}
+            onPress={() => navigation.replace('Recipe')}
             name="add"
           />
           <Text>PARTAGER</Text>
