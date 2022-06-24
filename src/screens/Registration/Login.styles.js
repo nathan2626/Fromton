@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  brandViewT: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
   brandViewText: {
     color: '#ffffff',
     fontSize: 40,
@@ -54,7 +58,7 @@ const styles = StyleSheet.create({
   button2: {
     backgroundColor: '#2579EA',
     width: '18.5%',
-	alignSelf: 'center',
+	  alignSelf: 'center',
     height: 55,
     alignItems: 'center',
     overflow: 'hidden',
@@ -62,14 +66,14 @@ const styles = StyleSheet.create({
     borderRadius: 55,
     flexDirection: 'row',
     bottom: 10,
-    right: 10,
+    right: 39,
   },
   buttonGoogle: {
     borderWidth: 1,
-    left: 10,
+    left: 39,
     borderRadius: 55,
     BorderColor: 'black',
-	alignSelf: 'center',
+	  alignSelf: 'center',
     backgroundColor: 'white',
     width: '18.5%',
     height: 55,
@@ -77,7 +81,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginTop: -18
+    marginTop: -64
   },
   icon: {
     width: 39,

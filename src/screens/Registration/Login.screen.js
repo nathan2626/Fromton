@@ -66,9 +66,9 @@ const Login = ({navigation}) => {
             </View>
 
             <View>
-              <Text style={{}}> ou connectez-vous avec</Text>
+              <Text style={styles.setTextOrConnect}> ou connectez-vous avec</Text>
             </View>
-            <View style={styles.setTextOrConnect}>
+            <View style={styles.brandViewT}>
               <TouchableOpacity style={styles.button2}>
                 <Image
                   source={require('../../assets/facebook.png')}
