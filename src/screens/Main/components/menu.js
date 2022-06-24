@@ -17,7 +17,7 @@ import {
 } from 'react-native-material-cards';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const {width, height} = Dimensions.get('window');
 
