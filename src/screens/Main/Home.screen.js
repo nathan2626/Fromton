@@ -60,7 +60,6 @@ const Home = ({navigation}) => {
         </ScrollView>
         <View style={styles.viewForGreenBgAfterSelect} />
 
-
         <Text style={styles.titleChoiceMoment}>
           Les meilleurs choix de la communauté
         </Text>
