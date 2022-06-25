@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "0E2095C6-1C71-44A7-ACF3-8CA0CF298651": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        },
+        "82C1464E-F40E-43D9-81F8-A166E2D97413": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "8C6848BC-E8E4-48B9-B8A1-877CD30337DC": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "CheeseClassifier1.mlmodel",
+            "path": "com.apple.CoreML/CheeseClassifier1.mlmodel"
+        }
+    },
+    "rootModelIdentifier": "8C6848BC-E8E4-48B9-B8A1-877CD30337DC"
+}
