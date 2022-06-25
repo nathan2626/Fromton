@@ -18,7 +18,7 @@ import MenuRecipes from './components/menuRecipe';
 import Ingredients from './components/ingredients';
 import Steps from './components/steps';
 
-import styles from './Recipe.styles';
+import styles from './Categories.styles';
 import LinearGradient from 'react-native-linear-gradient';
 
 const START_DEFAULT = {x: 0, y: 1};
@@ -45,7 +45,7 @@ const Categories = () => {
       <ScrollView style={styles.setScrollViewAll}>
         <View style={styles.imageContainer}>
           <Image
-            source={require('../../assets/recipes/1.jpeg')}
+            source={require('../../assets/cheeses/categories.png')}
             style={styles.setImgResize}
           />
         </View>

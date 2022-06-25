@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {
-  SafeAreaView,
+  View,
   ScrollView,
   Text,
   Alert,
@@ -8,6 +8,7 @@ import {
   Button,
 } from 'react-native';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import MenuFile from './components/menu';
 
 const Scan = () => {
   const [label, setLabel] = useState();
@@ -69,12 +70,13 @@ const Scan = () => {
   };
 
   return (
-    <SafeAreaView>
+    <View>
+      <MenuFile />
       <ScrollView style={{padding: 20}}>
-        <Button title="Pick" onPress={handleOnPress} />
+        <Button title="Choisis ta photo" onPress={handleOnPress} />
         <Text>{label}</Text>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
