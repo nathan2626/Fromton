@@ -1,13 +1,13 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import Home from '../screens/Main/Home.screen';
-import Search from '../screens/Main/Search.screen';
-import Scan from '../screens/Main/Scan.screen';
-import Categories from '../screens/Main/Categories.screen';
-import Profile from '../screens/Main/Profile.screen';
-import Cheese from '../screens/Main/Cheese.screen';
-import Recipe from '../screens/Main/Recipe.screen';
+import Home from '../features/Main/Home.screen';
+import Search from '../features/Main/Search.screen';
+import Scan from '../features/Main/Scan.screen';
+import Categories from '../features/Main/Categories.screen';
+import Profile from '../features/Main/Profile.screen';
+import Cheese from '../features/Main/Cheese.screen';
+import Recipe from '../features/Main/Recipe.screen';
 
 const Stack = createStackNavigator();
 

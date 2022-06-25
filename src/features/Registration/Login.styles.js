@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   loginBtn: {
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: "#dd4d11",
+    borderColor: '#dd4d11',
     width: width / 2,
     justifyContent: 'center',
     borderRadius: 50,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   button2: {
     backgroundColor: '#2579EA',
     width: '18.5%',
-	  alignSelf: 'center',
+    alignSelf: 'center',
     height: 55,
     alignItems: 'center',
     overflow: 'hidden',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     left: 39,
     borderRadius: 55,
     BorderColor: 'black',
-	  alignSelf: 'center',
+    alignSelf: 'center',
     backgroundColor: 'white',
     width: '18.5%',
     height: 55,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginTop: -64
+    marginTop: -64,
   },
   icon: {
     width: 39,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     color: '#dd4d11',
     fontSize: 34,
   },
-  setNotAccount : {
+  setNotAccount: {
     color: '#dd4d11',
     fontStyle: 'italic',
   },
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     borderColor: '#fde000',
   },
   setViewButton: {
-    height:100,
+    height: 100,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 32,

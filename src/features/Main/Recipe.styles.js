@@ -226,6 +226,48 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'left',
   },
+  setStyleIcon: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginRight: 12,
+  },
+  setAllViewDynamic: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    marginTop: 26,
+    marginBottom: 15,
+    backgroundColor: '#F1F1F1',
+    borderRadius: 20,
+    paddingVertical: 5,
+    marginHorizontal: 12,
+  },
+  setButton1Dynamic: {
+    paddingVertical: 5,
+    paddingHorizontal: 26,
+    borderRadius: 20,
+    backgroundColor:'#fff',
+  },
+  setTextButton1Dynamic: {
+    fontSize: 20,
+    color: 'darkorange',
+    letterSpacing: 1,
+  },
+  setButton2Dynamic: {
+    paddingVertical: 5,
+    paddingHorizontal: 26,
+    borderRadius: 20,
+    backgroundColor:'transparent',
+  },
+  setTextButton2Dynamic: {
+    fontSize: 20,
+    color: 'grey',
+    letterSpacing: 1,
+  },
+  displayDynamicContent: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
 });
 
 export default styles;

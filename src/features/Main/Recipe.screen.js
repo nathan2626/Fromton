@@ -14,7 +14,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {ScrollView} from 'react-native-gesture-handler';
 import RecipeResume from './components/recipeResume';
 import MenuCheese from './components/menuCheese';
-
+import MenuRecipes from './components/menuRecipe';
 import Ingredients from './components/ingredients';
 import Steps from './components/steps';
 
@@ -31,6 +31,7 @@ const {width, height} = Dimensions.get('window');
 const Recipe = () => {
   const navigation = useNavigation();
 
+  //for dynamic value
   const [displayIngredients, setDisplayIngredients] = useState(true);
 
   const toggleDisplayIngredients = () => {
@@ -39,7 +40,7 @@ const Recipe = () => {
 
   return (
     <>
-      <MenuCheese />
+      <MenuRecipes />
 
       <ScrollView style={styles.setScrollViewAll}>
         <View style={styles.imageContainer}>
@@ -65,11 +66,7 @@ const Recipe = () => {
           </View>
           <View style={styles.viewAllNotation}>
             <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginRight: 12,
-              }}>
+              style={styles.setStyleIcon}>
               <Icon
                 name="time-outline"
                 color={'black'}
@@ -79,11 +76,7 @@ const Recipe = () => {
             </View>
 
             <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginRight: 12,
-              }}>
+              style={styles.setStyleIcon}>
               <Icon
                 name="megaphone-outline"
                 color={'black'}
@@ -92,7 +85,7 @@ const Recipe = () => {
               <Text style={styles.setTextNotation}> 4 personnes</Text>
             </View>
 
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={styles.setStyleIcon}>
               <Icon
                 name="restaurant-outline"
                 color={'black'}
@@ -103,41 +96,41 @@ const Recipe = () => {
           </View>
 
 
-          <View style={{flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', marginTop: 26, marginBottom: 15, backgroundColor: '#F1F1F1', borderRadius: 20, paddingVertical: 5, marginHorizontal: 12}}>
+          <View style={styles.setAllViewDynamic}>
               
               {displayIngredients ? 
                 <TouchableOpacity
-                    style={{paddingVertical: 5, paddingHorizontal: 26, borderRadius: 20, backgroundColor:'#fff'}}
+                    style={styles.setButton1Dynamic}
                     onPress={toggleDisplayIngredients}>
-                    <Text style={{fontSize: 20, color: 'darkorange', letterSpacing: 1}}>Ingrédients</Text>
+                    <Text style={styles.setTextButton1Dynamic}>Ingrédients</Text>
                 </TouchableOpacity>
                   : 
                   <TouchableOpacity
-                    style={{paddingVertical: 5, paddingHorizontal: 26, borderRadius: 20, backgroundColor: 'transparent'}}
+                    style={styles.setButton2Dynamic}
                     onPress={toggleDisplayIngredients}>
-                    <Text style={{fontSize: 20, color: 'grey', letterSpacing: 1}}>Ingrédients</Text>
+                    <Text style={styles.setTextButton2Dynamic}>Ingrédients</Text>
                   </TouchableOpacity>
               }
     
               {!displayIngredients ? 
                
                 <TouchableOpacity
-                    style={{paddingVertical: 5, paddingHorizontal: 26, borderRadius: 20, backgroundColor:'#fff'}}
+                    style={styles.setButton1Dynamic}
                     onPress={toggleDisplayIngredients}>
-                    <Text style={{fontSize: 20, color: 'darkorange', letterSpacing: 1}}>Déroulement</Text>
+                    <Text style={styles.setTextButton1Dynamic}>Déroulement</Text>
                   </TouchableOpacity>
                   : 
                  
                   <TouchableOpacity
-                    style={{paddingVertical: 5, paddingHorizontal: 26, borderRadius: 20,}}
+                    style={styles.setButton2Dynamic}
                     onPress={toggleDisplayIngredients}>
-                    <Text style={{fontSize: 20, color: 'grey', letterSpacing: 1}}>Déroulement</Text>
+                    <Text style={styles.setTextButton2Dynamic}>Déroulement</Text>
                   </TouchableOpacity>
               }
         
           </View>
 
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          <View style={styles.displayDynamicContent}>
 
             {displayIngredients ? <Ingredients /> : <Steps />}
           </View>

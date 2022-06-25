@@ -2,17 +2,17 @@ import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import OnboardingScreen from './src/screens/onBoarding/OnBoarding.screen';
-import HomeRegistrationScreen from './src/screens/Registration/HomeRegistration.screen';
-import Login from './src/screens/Registration/Login.screen';
-import Register from './src/screens/Registration/Register.screen';
-import Home from './src/screens/Main/Home.screen';
-import Categories from './src/screens/Main/Categories.screen';
-import Scan from './src/screens/Main/Scan.screen';
-import Profile from './src/screens/Main/Profile.screen';
-import Search from './src/screens/Main/Search.screen';
-import Cheese from './src/screens/Main/Cheese.screen';
-import Cheeses from './src/screens/Main/Cheeses.screen';
+import OnboardingScreen from './src/features/onBoarding/OnBoarding.screen';
+import HomeRegistrationScreen from './src/features/Registration/HomeRegistration.screen';
+import Login from './src/features/Registration/Login.screen';
+import Register from './src/features/Registration/Register.screen';
+import Home from './src/features/Main/Home.screen';
+import Categories from './src/features/Main/Categories.screen';
+import Scan from './src/features/Main/Scan.screen';
+import Profile from './src/features/Main/Profile.screen';
+import Search from './src/features/Main/Search.screen';
+import Cheese from './src/features/Main/Cheese.screen';
+import Cheeses from './src/features/Main/Cheeses.screen';
 
 import BottomTabNavigator from './src/navigation/TabNavigators';
 
