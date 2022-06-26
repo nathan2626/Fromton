@@ -104,6 +104,13 @@ const styles = StyleSheet.create({
     marginTop: 5,
     textAlign: 'justify',
   },
+  titleChoiceMoment: {
+    textAlign: 'center',
+    marginTop: 26,
+    marginBottom: 10,
+    fontSize: 28,
+    fontWeight: '600',
+  },
   setViewAllLabels: {
     marginTop: 10,
   },
@@ -259,7 +266,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 26,
     borderRadius: 20,
-    backgroundColor:'#fff',
+    backgroundColor: '#fff',
   },
   setTextButton1Dynamic: {
     fontSize: 20,
@@ -270,7 +277,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 26,
     borderRadius: 20,
-    backgroundColor:'transparent',
+    backgroundColor: 'transparent',
   },
   setTextButton2Dynamic: {
     fontSize: 20,

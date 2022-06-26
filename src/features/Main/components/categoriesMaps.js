@@ -1,7 +1,59 @@
-import React from 'react';
-import {StyleSheet, Dimensions} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  SafeAreaView,
+  Image,
+  Text,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+  ImageBackground,
+} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
+
 
 const {width, height} = Dimensions.get('window');
+
+const CategoriesMaps = () => {
+  const navigation = useNavigation();
+
+  //for dynamic value
+  const [displayOrigines, setDisplayOrigines] = useState(true);
+  const [displayRecipes, setDisplayRecipes] = useState(true);
+
+  const toggleDisplayOrigines = () => {
+    setDisplayOrigines(!displayOrigines);
+  };
+
+  return (
+    <>
+      <ImageBackground
+        source={require('../../../assets/categories/Alsace.png')}
+        style={{
+          height: height / 3,
+          width: width * 0.87,
+          position: 'relative', // because it's parent
+          marginHorizontal: 10,
+          marginBottom: 28,
+        }}>
+        <Text
+          style={{
+            fontWeight: '500',
+            color: 'white',
+            textAlign: 'center',
+            marginTop: '40%',
+            fontSize: 22,
+            paddingVertical: 5,
+            paddingHorizontal: 5,
+            marginHorizontal: 40,
+            backgroundColor: 'rgba(0,0,0,0.5)',
+          }}>
+          Alsace
+        </Text>
+      </ImageBackground>
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   setScrollViewAll: {
@@ -66,7 +118,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 22,
     marginTop: 4,
-    textAlign: 'center',
+    textAlign: 'justify',
   },
   wineSpecial: {
     color: 'orange',
@@ -75,27 +127,16 @@ const styles = StyleSheet.create({
   wineChoose: {
     fontSize: 19,
     fontWeight: 'bold',
-    marginTop: 60,
-    textAlign: 'center',
+    marginTop: 0,
   },
   setLabelInfo: {
     fontSize: 19,
     fontWeight: 'bold',
-  },
-  setScrollViewSelection: {
-    backgroundColor: '#F3F3F3',
-    paddingBottom: 20,
-  },
-  ViewForTitleImg: {
-    marginTop: 10,
-    backgroundColor: '#F3F3F3',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
+    marginTop: 26,
   },
   viewForPadding: {
     paddingHorizontal: 20,
-    marginTop: 15,
+    marginTop: -10,
   },
   setLabelDescription: {
     color: 'grey',
@@ -154,10 +195,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   setTextSelection: {
-    color: 'black',
+    color: 'white',
     textAlign: 'center',
     marginTop: 26,
-    marginLeft: 10,
     fontSize: 28,
     fontWeight: '500',
   },
@@ -170,7 +210,7 @@ const styles = StyleSheet.create({
     marginLeft: 32,
   },
   imageContainer: {
-    flex: 1,
+    flex: 0.8,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -180,7 +220,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 7,
     marginBottom: 7,
     borderRadius: 20,
-    marginTop: 18,
+    marginTop: 10,
     paddingTop: 26,
   },
   line: {
@@ -239,48 +279,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'left',
   },
-  setStyleIcon: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginRight: 12,
-  },
-  setAllViewDynamic: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    marginTop: 26,
-    marginBottom: 15,
-    backgroundColor: '#F1F1F1',
-    borderRadius: 20,
-    paddingVertical: 5,
-    marginHorizontal: 12,
-  },
-  setButton1Dynamic: {
-    paddingVertical: 5,
-    paddingHorizontal: 26,
-    borderRadius: 20,
-    backgroundColor:'#fff',
-  },
-  setTextButton1Dynamic: {
-    fontSize: 20,
-    color: 'darkorange',
-    letterSpacing: 1,
-  },
-  setButton2Dynamic: {
-    paddingVertical: 5,
-    paddingHorizontal: 26,
-    borderRadius: 20,
-    backgroundColor:'transparent',
-  },
-  setTextButton2Dynamic: {
-    fontSize: 20,
-    color: 'grey',
-    letterSpacing: 1,
-  },
-  displayDynamicContent: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
 });
 
-export default styles;
+export default CategoriesMaps;

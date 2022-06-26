@@ -23,7 +23,7 @@ import CategoriesResume from './components/categoriesResume';
 import CardFile from './components/card';
 import CardSelectionFile from './components/cardSelection';
 import RecipesResumeCategories from './components/recipesResumeCategories';
-
+import CategoriesMaps from './components/categoriesMaps';
 import styles from './Categories.styles';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -50,130 +50,57 @@ const Categories = () => {
       <MenuFile />
 
       <ScrollView style={styles.setScrollViewAll}>
-        <View style={styles.imageContainer}>
-          <Image
-            source={require('../../assets/cheeses/categories.png')}
-            style={styles.setImgResize}
-          />
-        </View>
+        <Text style={styles.titleChoiceMoment}>
+          Quelle région allez-vous visiter ?
+        </Text>
+
         <View
           style={{
-            flexDirection: 'row',
-            alignItems: 'center',
+            flexDirection: 'column',
             justifyContent: 'center',
-            backgroundColor: 'white',
-            paddingVertical: 10,
-            marginHorizontal: 50,
-            borderRadius: 20,
-            marginTop: -24,
-            borderColor: 'black',
-            borderWidth: 0,
-            shadowColor: '#000',
-            shadowOffset: {width: 0, height: 5},
-            shadowOpacity: 0.36,
-            shadowRadius: 6.68,
-            elevation: 11,
+            alignItems: 'center',
+            marginTop: 4,
+            marginLeft: 20,
           }}>
-          <Text style={{marginRight: 30, fontSize: 18, fontWeight: '500'}}>
-            Trouver un fromage
-          </Text>
-          <Icon
-            style={{marginLeft: 30, fontSize: 18, fontWeight: '600'}}
-            name="search"
-          />
-        </View>
-        <View style={styles.detailsContainer}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            {displayOrigines ? (
-              <TouchableOpacity
-                onPress={toggleDisplayOrigines}
-                style={{
-                  borderBottomColor: 'orange',
-                  borderBottomWidth: 3,
-                  paddingHorizontal: 30,
-                  paddingBottom: 5,
-                  marginRight: 26,
-                }}>
-                <Text style={{fontSize: 21, fontWeight: '600',}}>Origines</Text>
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity
-                onPress={toggleDisplayOrigines}
-                style={{
-                  borderBottomColor: 'orange',
-                  borderBottomWidth: 0,
-                  paddingHorizontal: 30,
-                  paddingBottom: 5,
-                  marginRight: 26,
-                }}>
-                <Text style={{fontSize: 18}}>Origines</Text>
-              </TouchableOpacity>
-            )}
-
-            {!displayOrigines ? (
-              <TouchableOpacity
-                onPress={toggleDisplayOrigines}
-                style={{
-                  borderBottomColor: 'orange',
-                  borderBottomWidth: 3,
-                  paddingHorizontal: 30,
-                  paddingBottom: 5,
-                  marginLeft: 26,
-                }}>
-                <Text style={{fontSize: 21, fontWeight: '600',}}>Recettes</Text>
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity
-                onPress={toggleDisplayOrigines}
-                style={{
-                  borderBottomColor: 'orange',
-                  borderBottomWidth: 0,
-                  paddingHorizontal: 30,
-                  paddingBottom: 5,
-                  marginLeft: 26,
-                }}>
-                <Text style={{fontSize: 18}}>Recettes</Text>
-              </TouchableOpacity>
-            )}
-          </View>
-
-          <View style={styles.displayDynamicContent}>
-            {displayOrigines ? <CategoriesResume /> : <RecipesResumeCategories />}
-          </View>
-
-          
-         
-
-        </View>
-        <View style={styles.ViewForTitleImg}>
-            <Text style={styles.setTextSelection}>La selection</Text>
-            <Image
-              source={require('../../assets/onBoarding/logo-fromton-color.png')}
-              style={styles.setImgSelection}
-            />
-          </View>
-
-
           <ScrollView
-            style={styles.setScrollViewSelection}
+            style={styles.setScrollViewNews}
             horizontal
             nestedScrollEnabled={true}>
-            <CardSelectionFile />
-            <CardSelectionFile />
-            <CardSelectionFile />
-            <CardSelectionFile />
-          </ScrollView>
+            <CategoriesMaps />
+            <CategoriesMaps />
 
-            
-          <View style={{marginTop: 20}}>
-            <Text style={styles.setTexteQuestion}>Une question ?</Text>
-            <Text style={styles.setTexteSupport}>Contactez le support !</Text>
-          </View>
+            <CategoriesMaps />
+
+            <CategoriesMaps />
+
+            <CategoriesMaps />
+
+            <CategoriesMaps />
+          </ScrollView>
+        </View>
+
+        <View style={styles.ViewForTitleImg}>
+          <Text style={styles.setTextSelection}>La selection</Text>
+          <Image
+            source={require('../../assets/onBoarding/logo-fromton-color.png')}
+            style={styles.setImgSelection}
+          />
+        </View>
+
+        <ScrollView
+          style={styles.setScrollViewSelection}
+          horizontal
+          nestedScrollEnabled={true}>
+          <CardSelectionFile />
+          <CardSelectionFile />
+          <CardSelectionFile />
+          <CardSelectionFile />
+        </ScrollView>
+
+        <View style={{marginTop: 20}}>
+          <Text style={styles.setTexteQuestion}>Une question ?</Text>
+          <Text style={styles.setTexteSupport}>Contactez le support !</Text>
+        </View>
       </ScrollView>
     </>
   );

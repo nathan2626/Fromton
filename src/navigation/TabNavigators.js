@@ -29,7 +29,7 @@ const BottomTabNavigator = () => {
             size = focused ? 32 : 26;
             color = focused ? 'orange' : 'black';
           } else if (route.name === 'TabCategories') {
-            iconName = focused ? 'apps' : 'apps-outline';
+            iconName = focused ? 'location' : 'location-outline';
             size = focused ? 32 : 26;
             color = focused ? 'orange' : 'black';
           } else if (route.name === 'TabScan') {
@@ -54,7 +54,7 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="TabHome" component={HomeStackNavigator} />
       <Tab.Screen name="TabCategories" component={CategoriesStackNavigator} />
       <Tab.Screen name="TabScan" component={ScanStackNavigator} />
-      <Tab.Screen name="TabSearch" component={CategoriesStackNavigator} />
+      <Tab.Screen name="TabSearch" component={SearchStackNavigator} />
       { connected ? 
         <Tab.Screen name="TabProfile" component={ProfileStackNavigator} />
         :

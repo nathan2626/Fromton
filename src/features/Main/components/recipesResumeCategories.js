@@ -30,29 +30,24 @@ export const RecipesResumeCategories = () => {
 
   return (
     <>
-
-      <ScrollView
-      horizontal
-              nestedScrollEnabled={true}>
+      <ScrollView horizontal nestedScrollEnabled={true}>
         <View
-            style={{
+          style={{
             flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: 4,
-            }}>
-
-
-            <ImageBackground
+          }}>
+          <ImageBackground
             source={require('../../../assets/categories/Alsace.png')}
             style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
+              height: height / 5,
+              width: width / 2.2,
+              position: 'relative', // because it's parent
+              marginHorizontal: 2,
             }}>
             <Text
-                style={{
+              style={{
                 fontWeight: 'bold',
                 color: 'white',
                 textAlign: 'center',
@@ -62,21 +57,21 @@ export const RecipesResumeCategories = () => {
                 paddingHorizontal: 5,
                 marginHorizontal: 15,
                 backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
+              }}>
+              Recette 1
             </Text>
-            </ImageBackground>
+          </ImageBackground>
 
-            <ImageBackground
+          <ImageBackground
             source={require('../../../assets/categories/Alsace.png')}
             style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
+              height: height / 5,
+              width: width / 2.2,
+              position: 'relative', // because it's parent
+              marginHorizontal: 2,
             }}>
             <Text
-                style={{
+              style={{
                 fontWeight: 'bold',
                 color: 'white',
                 textAlign: 'center',
@@ -86,21 +81,21 @@ export const RecipesResumeCategories = () => {
                 paddingHorizontal: 5,
                 marginHorizontal: 15,
                 backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
+              }}>
+              Recette 1
             </Text>
-            </ImageBackground>
+          </ImageBackground>
 
-            <ImageBackground
+          <ImageBackground
             source={require('../../../assets/categories/Alsace.png')}
             style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
+              height: height / 5,
+              width: width / 2.2,
+              position: 'relative', // because it's parent
+              marginHorizontal: 2,
             }}>
             <Text
-                style={{
+              style={{
                 fontWeight: 'bold',
                 color: 'white',
                 textAlign: 'center',
@@ -110,21 +105,21 @@ export const RecipesResumeCategories = () => {
                 paddingHorizontal: 5,
                 marginHorizontal: 15,
                 backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
+              }}>
+              Recette 1
             </Text>
-            </ImageBackground>
+          </ImageBackground>
 
-            <ImageBackground
+          <ImageBackground
             source={require('../../../assets/categories/Alsace.png')}
             style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
+              height: height / 5,
+              width: width / 2.2,
+              position: 'relative', // because it's parent
+              marginHorizontal: 2,
             }}>
             <Text
-                style={{
+              style={{
                 fontWeight: 'bold',
                 color: 'white',
                 textAlign: 'center',
@@ -134,21 +129,21 @@ export const RecipesResumeCategories = () => {
                 paddingHorizontal: 5,
                 marginHorizontal: 15,
                 backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
+              }}>
+              Recette 1
             </Text>
-            </ImageBackground>
+          </ImageBackground>
 
-            <ImageBackground
+          <ImageBackground
             source={require('../../../assets/categories/Alsace.png')}
             style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
+              height: height / 5,
+              width: width / 2.2,
+              position: 'relative', // because it's parent
+              marginHorizontal: 2,
             }}>
             <Text
-                style={{
+              style={{
                 fontWeight: 'bold',
                 color: 'white',
                 textAlign: 'center',
@@ -158,18 +153,12 @@ export const RecipesResumeCategories = () => {
                 paddingHorizontal: 5,
                 marginHorizontal: 15,
                 backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
+              }}>
+              Recette 1
             </Text>
-            </ImageBackground>
-
-         
-            
+          </ImageBackground>
         </View>
-      </ScrollView>  
-     
-      
-
+      </ScrollView>
     </>
   );
 };
