@@ -16,9 +16,7 @@ const Scan = () => {
 
   useEffect(() => {
     async function getLabel(uri){
-      //uri= 'file:///Users/shinobi/Library/Developer/CoreSimulator/Devices/94A3D673-5D64-4B18-93F7-E03BDFA7F462/data/Containers/Data/Application/5719218B-0F58-49BE-BD85-642A9AFC7F68/tmp/049CC259-F39A-477B-A2BC-FDF54617859A.png'
       const detectedLabel = await NativeModules.Detector.detect(uri);
-      console.log('detected label:', JSON.stringify(detectedLabel))
       setLabel(detectedLabel);
     }
     if(response){

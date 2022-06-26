@@ -12,6 +12,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2839AFC62868D29D008BFE5F /* CheeseClassifier1.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 2839AFC12868D29D008BFE5F /* CheeseClassifier1.mlpackage */; };
+		2839AFC72868D29D008BFE5F /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839AFC22868D29D008BFE5F /* Detector.swift */; };
+		2839AFC82868D29D008BFE5F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839AFC32868D29D008BFE5F /* Extensions.swift */; };
+		2839AFC92868D29D008BFE5F /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2839AFC42868D29D008BFE5F /* GoogLeNetPlaces.mlmodel */; };
+		2839AFCA2868D29D008BFE5F /* Detector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2839AFC52868D29D008BFE5F /* Detector.m */; };
+		2839AFCC2868D317008BFE5F /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839AFCB2868D317008BFE5F /* UIImage+CVPixelBuffer.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		F2D15C6794080EB7E8C535D4 /* libPods-Fromton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 521A73A0C1B4EFAFD3DB3839 /* libPods-Fromton.a */; };
 /* End PBXBuildFile section */
@@ -38,6 +44,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Fromton/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Fromton/main.m; sourceTree = "<group>"; };
 		1EBFB029E032C1FE8F84CEB3 /* Pods-Fromton-FromtonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fromton-FromtonTests.release.xcconfig"; path = "Target Support Files/Pods-Fromton-FromtonTests/Pods-Fromton-FromtonTests.release.xcconfig"; sourceTree = "<group>"; };
+		2839AFA32868CD05008BFE5F /* Fromton-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fromton-Bridging-Header.h"; sourceTree = "<group>"; };
+		2839AFC02868D27F008BFE5F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		2839AFC12868D29D008BFE5F /* CheeseClassifier1.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = CheeseClassifier1.mlpackage; sourceTree = "<group>"; };
+		2839AFC22868D29D008BFE5F /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		2839AFC32868D29D008BFE5F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2839AFC42868D29D008BFE5F /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
+		2839AFC52868D29D008BFE5F /* Detector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detector.m; sourceTree = "<group>"; };
+		2839AFCB2868D317008BFE5F /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		521A73A0C1B4EFAFD3DB3839 /* libPods-Fromton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fromton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Fromton/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C6480004287AD11A6A4ECDC /* Pods-Fromton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fromton.debug.xcconfig"; path = "Target Support Files/Pods-Fromton/Pods-Fromton.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,7 +105,9 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				2839AFCB2868D317008BFE5F /* UIImage+CVPixelBuffer.swift */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				2839AFA32868CD05008BFE5F /* Fromton-Bridging-Header.h */,
 			);
 			name = Fromton;
 			sourceTree = "<group>";
@@ -101,7 +117,6 @@
 			children = (
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -124,6 +139,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2839AFC12868D29D008BFE5F /* CheeseClassifier1.mlpackage */,
+				2839AFC52868D29D008BFE5F /* Detector.m */,
+				2839AFC22868D29D008BFE5F /* Detector.swift */,
+				2839AFC32868D29D008BFE5F /* Extensions.swift */,
+				2839AFC42868D29D008BFE5F /* GoogLeNetPlaces.mlmodel */,
+				2839AFC02868D27F008BFE5F /* Header.h */,
 				13B07FAE1A68108700A75B9A /* Fromton */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* FromtonTests */,
@@ -216,7 +237,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -419,8 +440,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2839AFC82868D29D008BFE5F /* Extensions.swift in Sources */,
+				2839AFC62868D29D008BFE5F /* CheeseClassifier1.mlpackage in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				2839AFC72868D29D008BFE5F /* Detector.swift in Sources */,
+				2839AFCA2868D29D008BFE5F /* Detector.m in Sources */,
+				2839AFC92868D29D008BFE5F /* GoogLeNetPlaces.mlmodel in Sources */,
+				2839AFCC2868D317008BFE5F /* UIImage+CVPixelBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02CC6FAAA798953E0BDF9B13 /* Pods-Fromton-FromtonTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -466,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1EBFB029E032C1FE8F84CEB3 /* Pods-Fromton-FromtonTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = FromtonTests/Info.plist;
@@ -507,6 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Fromton;
+				SWIFT_OBJC_BRIDGING_HEADER = "Fromton-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -533,6 +563,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Fromton;
+				SWIFT_OBJC_BRIDGING_HEADER = "Fromton-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
