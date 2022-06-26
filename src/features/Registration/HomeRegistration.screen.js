@@ -53,12 +53,13 @@ const HomeRegistration = ({navigation}) => {
           <View style={styles.fixViewBtn3}>
             <TouchableOpacity
               style={[styles.btn3]}
-              onPress={() => navigation.replace('')}>
+              onPress={() => navigation.replace('HomeCoin')}>
               <Text style={styles.textBtn3Set}>
                 Continuer sans s'enregistrer
               </Text>
             </TouchableOpacity>
           </View>
+
         </View>
       </LinearGradient>
     </View>

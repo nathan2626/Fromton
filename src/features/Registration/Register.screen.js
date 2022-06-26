@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Text,
   ScrollView,
@@ -15,6 +15,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './Register.styles';
 
 import TopLogo from './components/topLogo';
+import axios from 'axios';
+import {DB_URL} from 'react-native-dotenv';
 
 const {width, height} = Dimensions.get('window');
 

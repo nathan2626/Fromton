@@ -14,6 +14,9 @@ import Search from './src/features/Main/Search.screen';
 import Cheese from './src/features/Main/Cheese.screen';
 import Cheeses from './src/features/Main/Cheeses.screen';
 
+//testing coin
+import HomeCoin from './src/features/TestCoin/home';
+
 import BottomTabNavigator from './src/navigation/TabNavigators';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -55,6 +58,9 @@ const App = () => {
             />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Register} />
+
+            <Stack.Screen name="HomeCoin" component={HomeCoin} />
+
           </Stack.Navigator>
         )}
       </NavigationContainer>

@@ -52,7 +52,7 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="TabHome" component={HomeStackNavigator} />
       <Tab.Screen name="TabCategories" component={CategoriesStackNavigator} />
       <Tab.Screen name="TabScan" component={ScanStackNavigator} />
-      <Tab.Screen name="TabSearch" component={SearchStackNavigator} />
+      <Tab.Screen name="TabSearch" component={CategoriesStackNavigator} />
       <Tab.Screen name="TabProfile" component={ProfileStackNavigator} />
     </Tab.Navigator>
   );

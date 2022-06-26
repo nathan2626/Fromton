@@ -18,6 +18,7 @@ import {
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useNavigation} from '@react-navigation/core';
 
 const {width, height} = Dimensions.get('window');
 
@@ -27,6 +28,8 @@ const GRADIENT_COLORS = ['#fde000', '#dd4d11'];
 const GRADIENT_LOCATIONS = [0.9, 0.1, 0.5, 0.5];
 
 export const MenuFile = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <LinearGradient
@@ -37,11 +40,23 @@ export const MenuFile = () => {
         end={END_DEFAULT}>
         <View style={styles.viewAllFixedMenu}>
           <View style={styles.viewUserAllFixedMenu}>
-            <Icon style={styles.setUserFixedMenu} name="person" />
+            <Icon
+              onPress={() => navigation.replace('Home')}
+              style={styles.setUserFixedMenu}
+              name="home"
+            />
 
             <View style={styles.viewRightAllFixedMenu}>
-              <Icon style={styles.setRightFixedMenu1} name="heart" />
-              <Icon style={styles.setRightFixedMenu} name="search" />
+              <Icon
+                onPress={() => navigation.replace('Categories')}
+                style={styles.setRightFixedMenu}
+                name="search"
+              />
+              <Icon
+                onPress={() => navigation.replace('Profile')}
+                style={styles.setRightFixedMenu1}
+                name="person"
+              />
             </View>
           </View>
         </View>
@@ -76,10 +91,10 @@ const styles = StyleSheet.create({
   setRightFixedMenu: {
     fontSize: 32,
     color: 'white',
+    marginRight: 12,
   },
   setRightFixedMenu1: {
     fontSize: 32,
-    marginRight: 12,
     color: 'white',
   },
 });

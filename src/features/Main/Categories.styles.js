@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 22,
     marginTop: 4,
-    textAlign: 'justify',
+    textAlign: 'center',
   },
   wineSpecial: {
     color: 'orange',
@@ -75,11 +75,23 @@ const styles = StyleSheet.create({
   wineChoose: {
     fontSize: 19,
     fontWeight: 'bold',
-    marginTop: 20,
+    marginTop: 60,
+    textAlign: 'center',
   },
   setLabelInfo: {
     fontSize: 19,
     fontWeight: 'bold',
+  },
+  setScrollViewSelection: {
+    backgroundColor: '#F3F3F3',
+    paddingBottom: 20,
+  },
+  ViewForTitleImg: {
+    marginTop: 10,
+    backgroundColor: '#F3F3F3',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
   },
   viewForPadding: {
     paddingHorizontal: 20,
@@ -142,9 +154,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   setTextSelection: {
-    color: 'white',
+    color: 'black',
     textAlign: 'center',
     marginTop: 26,
+    marginLeft: 10,
     fontSize: 28,
     fontWeight: '500',
   },
@@ -167,7 +180,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 7,
     marginBottom: 7,
     borderRadius: 20,
-    marginTop: 10,
+    marginTop: 18,
     paddingTop: 26,
   },
   line: {
