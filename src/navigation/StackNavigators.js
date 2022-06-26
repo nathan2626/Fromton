@@ -8,6 +8,7 @@ import Categories from '../features/Main/Categories.screen';
 import Profile from '../features/Main/Profile.screen';
 import Cheese from '../features/Main/Cheese.screen';
 import Recipe from '../features/Main/Recipe.screen';
+import ProfileNotConnected from '../features/Main/ProfileNotConnected.screen';
 
 const Stack = createStackNavigator();
 
@@ -20,9 +21,12 @@ const HomeStackNavigator = () => {
       <Stack.Screen name="Home" options={{title: 'Home'}} component={Home} />
       <Stack.Screen name="Cheese" component={Cheese} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="ProfileNotConnected"
+        component={ProfileNotConnected}
+      />
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Recipe" component={Recipe} />
-
     </Stack.Navigator>
   );
 };
@@ -34,6 +38,24 @@ const ProfileStackNavigator = () => {
         headerShown: false,
       })}>
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="ProfileNotConnected"
+        component={ProfileNotConnected}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const ProfileNotConnectedStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={() => ({
+        headerShown: false,
+      })}>
+      <Stack.Screen
+        name="ProfileNotConnected"
+        component={ProfileNotConnected}
+      />
     </Stack.Navigator>
   );
 };
@@ -46,10 +68,13 @@ const CategoriesStackNavigator = () => {
       })}>
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="ProfileNotConnected"
+        component={ProfileNotConnected}
+      />
       <Stack.Screen name="Cheese" component={Cheese} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Recipe" component={Recipe} />
-
     </Stack.Navigator>
   );
 };
@@ -62,15 +87,20 @@ const ScanStackNavigator = () => {
       })}>
       <Stack.Screen name="Scan" component={Scan} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="ProfileNotConnected"
+        component={ProfileNotConnected}
+      />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Cheese" component={Cheese} />
       <Stack.Screen name="Recipe" component={Recipe} />
-
     </Stack.Navigator>
   );
 };
 
 const SearchStackNavigator = () => {
+  const connected = true;
+
   return (
     <Stack.Navigator
       screenOptions={() => ({
@@ -81,9 +111,11 @@ const SearchStackNavigator = () => {
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="ProfileNotConnected"
+        component={ProfileNotConnected}
+      />
       <Stack.Screen name="Recipe" component={Recipe} />
-
-
     </Stack.Navigator>
   );
 };
@@ -94,4 +126,5 @@ export {
   CategoriesStackNavigator,
   ScanStackNavigator,
   SearchStackNavigator,
+  ProfileNotConnectedStackNavigator,
 };

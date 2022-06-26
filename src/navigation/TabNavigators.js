@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   HomeStackNavigator,
   ProfileStackNavigator,
+  ProfileNotConnectedStackNavigator,
   CategoriesStackNavigator,
   ScanStackNavigator,
   SearchStackNavigator,
@@ -12,6 +13,7 @@ import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
+const connected = false;
 
 const BottomTabNavigator = () => {
   return (
@@ -53,7 +55,11 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="TabCategories" component={CategoriesStackNavigator} />
       <Tab.Screen name="TabScan" component={ScanStackNavigator} />
       <Tab.Screen name="TabSearch" component={CategoriesStackNavigator} />
-      <Tab.Screen name="TabProfile" component={ProfileStackNavigator} />
+      { connected ? 
+        <Tab.Screen name="TabProfile" component={ProfileStackNavigator} />
+        :
+        <Tab.Screen name="TabProfile" component={ProfileNotConnectedStackNavigator} />
+      }
     </Tab.Navigator>
   );
 };

@@ -73,6 +73,9 @@ const Scan = () => {
       <ScrollView style={{padding: 20}}>
         <Button title="Choisis ta photo" onPress={handleOnPress} />
         <Text>{label}</Text>
+        {
+          label ? <Text>Okk</Text> : <Text>No ok</Text>
+        }
       </ScrollView>
     </View>
   );
