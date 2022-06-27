@@ -26,6 +26,36 @@ const GRADIENT_COLORS = ['#fde000', '#dd4d11'];
 const GRADIENT_LOCATIONS = [0.1, 0.9, 0.9, 0.5];
 
 const Register = ({navigation}) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const goRegister = (name, email, password) => {
+    console.log(name, email, password);
+    axios
+      .post('http://127.0.0.1:8000/api/auth/register', {
+        name,
+        email,
+        password,
+        device_name: 'App',
+      })
+      .then(function (response) {
+        console.log(response.data);
+        console.log('test', response.status);
+        if (response.status === 201) {
+          //dispatch('userStock', response.data);
+          navigation.reset({
+            index: 0,
+            routes: [{name: 'BottomNav'}],
+          });
+          //navigation.replace('BottomNav');
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
     <ScrollView
       style={{flex: 1, backgroundColor: '#ffffff'}}
@@ -48,27 +78,36 @@ const Register = ({navigation}) => {
           <View style={styles.setViewIdentity}>
             <View style={styles.setViewEmail}>
               <Text style={styles.setLabel}>Pseudo</Text>
-              <TextInput style={styles.setInput} value="Nathan Journo" />
+              <TextInput
+                style={styles.setInput}
+                onChangeText={setName}
+                value={name}
+              />
             </View>
 
             <View style={styles.setViewMdp}>
               <Text style={styles.setLabel}>Email</Text>
               <TextInput
+                onChangeText={setEmail}
                 style={styles.setInput}
-                value="nathanjourno@yahoo.fr"
+                value={email}
                 keyboardType="email-address"
               />
             </View>
 
             <View style={styles.setViewMdp}>
               <Text style={styles.setLabel}>Mot de passe</Text>
-              <TextInput style={styles.setInput} value="*********" />
+              <TextInput
+                style={styles.setInput}
+                onChangeText={setPassword}
+                value={password}
+              />
             </View>
 
             <View style={styles.setViewButtonRegister}>
               <TouchableOpacity
                 style={styles.loginBtn}
-                onPress={() => navigation.replace('Home')}>
+                onPress={() => goRegister(name, email, password)}>
                 <Text style={styles.textButtonLogin}>S'enregistrer</Text>
               </TouchableOpacity>
             </View>

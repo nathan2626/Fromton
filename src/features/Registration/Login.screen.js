@@ -46,9 +46,9 @@ const Login = ({navigation}) => {
         if (response.status === 200) {
           //dispatch('userStock', response.data);
           navigation.reset({
-            index:0,
-            routes: [{name: 'BottomNav'}]
-          })
+            index: 0,
+            routes: [{name: 'BottomNav'}],
+          });
           //navigation.replace('BottomNav');
         }
       })

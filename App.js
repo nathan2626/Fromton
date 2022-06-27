@@ -22,7 +22,7 @@ import BottomTabNavigator from './src/navigation/TabNavigators';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createStackNavigator();
- 
+
 const App = () => {
   const connected = false;
 
@@ -41,24 +41,24 @@ const App = () => {
 
   return (
     isAppFirstLaunched != null && (
-      <NavigationContainer>             
-          <Stack.Navigator screenOptions={{headerShown: false}}>
-            {isAppFirstLaunched && (
-              <Stack.Screen
-                name="OnboardingScreen"
-                component={OnboardingScreen}
-              />
-            )}
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          {isAppFirstLaunched && (
             <Stack.Screen
-              name="HomeRegistrationScreen"
-              component={HomeRegistrationScreen}
+              name="OnboardingScreen"
+              component={OnboardingScreen}
             />
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Register" component={Register} />
+          )}
+          <Stack.Screen
+            name="HomeRegistrationScreen"
+            component={HomeRegistrationScreen}
+          />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Register" component={Register} />
 
-            <Stack.Screen name="HomeCoin" component={HomeCoin} />
-            <Stack.Screen name="BottomNav" component={BottomTabNavigator} />
-          </Stack.Navigator>
+          <Stack.Screen name="HomeCoin" component={HomeCoin} />
+          <Stack.Screen name="BottomNav" component={BottomTabNavigator} />
+        </Stack.Navigator>
       </NavigationContainer>
     )
   );
