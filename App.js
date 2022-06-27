@@ -22,9 +22,9 @@ import BottomTabNavigator from './src/navigation/TabNavigators';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createStackNavigator();
-
+ 
 const App = () => {
-  const connected = true;
+  const connected = false;
 
   const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(null);
   React.useEffect(async () => {
@@ -41,10 +41,7 @@ const App = () => {
 
   return (
     isAppFirstLaunched != null && (
-      <NavigationContainer>
-        {connected ? (
-          <BottomTabNavigator />
-        ) : (
+      <NavigationContainer>             
           <Stack.Navigator screenOptions={{headerShown: false}}>
             {isAppFirstLaunched && (
               <Stack.Screen
@@ -60,9 +57,8 @@ const App = () => {
             <Stack.Screen name="Register" component={Register} />
 
             <Stack.Screen name="HomeCoin" component={HomeCoin} />
-
+            <Stack.Screen name="BottomNav" component={BottomTabNavigator} />
           </Stack.Navigator>
-        )}
       </NavigationContainer>
     )
   );
