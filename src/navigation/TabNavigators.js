@@ -13,7 +13,7 @@ import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
-const connected = false;
+const connected = true;
 
 const BottomTabNavigator = () => {
   return (

@@ -26,9 +26,9 @@ const GRADIENT_COLORS = ['#fde000', '#dd4d11'];
 const GRADIENT_LOCATIONS = [0.1, 0.9, 0.9, 0.5];
 
 const Login = ({navigation}) => {
-
   //const userLogin = useSelector(state => state.userStock);
   //console.log(userLogin);
+
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

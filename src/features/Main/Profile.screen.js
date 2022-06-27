@@ -27,6 +27,36 @@ const GRADIENT_LOCATIONS = [0.1, 0.9, 0.9, 0.5];
 
 const Profile = ({navigation}) => {
   const isConnected = true;
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [token, setToken] = useState('');
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
+  const goMe = token => {
+    console.log(token);
+    axios
+      .post('http://127.0.0.1:8000/api/auth/me', config)
+      .then(function (response) {
+        console.log(response.data);
+        console.log('test', response.status);
+        if (response.status === 200) {
+          //dispatch('userStock', response.data);
+          console.log('bien sur me');
+          navigation.reset({
+            index: 0,
+            routes: [{name: 'BottomNav'}],
+          });
+          //navigation.replace('BottomNav');
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
     <ScrollView
       style={{flex: 1, backgroundColor: '#ffffff'}}
@@ -36,9 +66,7 @@ const Profile = ({navigation}) => {
       <View style={styles.bottomView}>
         <View style={styles.fixPaddingViewText}>
           <Text style={styles.setTextHome}>Hello Nathan Journo</Text>
-          <Text>
-            Vous souhaitez modifier votre compte ?
-          </Text>
+          <Text>Vous souhaitez vous déconnecter ?</Text>
 
           <View style={styles.setViewIdentity}>
             <View style={styles.setViewEmail}>
@@ -63,8 +91,8 @@ const Profile = ({navigation}) => {
             <View style={styles.setViewButtonRegister}>
               <TouchableOpacity
                 style={styles.loginBtn}
-                onPress={() => navigation.replace('Home')}>
-                <Text style={styles.textButtonLogin}>Enregistrer</Text>
+                onPress={() => goMe(token)}>
+                <Text style={styles.textButtonLogin}>Se déconnecter</Text>
               </TouchableOpacity>
             </View>
           </View>

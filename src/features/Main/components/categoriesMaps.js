@@ -10,7 +10,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/core';
-
+import axios from 'axios';
 
 const {width, height} = Dimensions.get('window');
 
@@ -25,6 +25,25 @@ const CategoriesMaps = () => {
     setDisplayOrigines(!displayOrigines);
   };
 
+  const goCategories = () => {
+    axios
+      .get('http://127.0.0.1:8000/api/categories')
+      .then(function (response) {
+        console.log(response.data);
+        /*if (response.status === 200) {
+          //dispatch('userStock', response.data);
+          navigation.reset({
+            index: 0,
+            routes: [{name: 'BottomNav'}],
+          });
+          //navigation.replace('BottomNav');
+        }*/
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
     <>
       <ImageBackground
@@ -37,6 +56,7 @@ const CategoriesMaps = () => {
           marginBottom: 28,
         }}>
         <Text
+          onPress={() => goCategories()}
           style={{
             fontWeight: '500',
             color: 'white',
