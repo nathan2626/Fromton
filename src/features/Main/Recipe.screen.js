@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   SafeAreaView,
@@ -17,7 +17,8 @@ import MenuCheese from './components/menuCheese';
 import MenuRecipes from './components/menuRecipe';
 import Ingredients from './components/ingredients';
 import Steps from './components/steps';
-
+import {useRoute} from '@react-navigation/core';
+import axios from 'axios';
 import styles from './Recipe.styles';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -30,6 +31,7 @@ const {width, height} = Dimensions.get('window');
 
 const Recipe = () => {
   const navigation = useNavigation();
+  const route = useRoute();
 
   //for dynamic value
   const [displayIngredients, setDisplayIngredients] = useState(true);
@@ -50,7 +52,7 @@ const Recipe = () => {
           />
         </View>
         <View>
-          <Text style={styles.setCategoryTitle}>Ossau-Iraty - AOP -</Text>
+          <Text style={styles.setCategoryTitle}>{route.params.name}</Text>
         </View>
         <View style={styles.detailsContainer}>
           <View style={styles.setViewSubtitleCheese}>
