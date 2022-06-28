@@ -163,7 +163,7 @@ export const CardFile = () => {
     require('../../../assets/cheeses/cheese111.png'),
     require('../../../assets/cheeses/cheese112.png'),
   ];
-  
+
   let [cheeses, setCheeses] = React.useState(null);
   useEffect(() => {
     axios
@@ -197,9 +197,7 @@ export const CardFile = () => {
               </View>
 
               <View style={styles.viewForSubtitleCard}>
-                <Text style={styles.setSubtitleCard}>
-                {cheese.subtitle}
-                </Text>
+                <Text style={styles.setSubtitleCard}>{cheese.subtitle}</Text>
               </View>
 
               <View style={styles.viewAllNotation}>
@@ -239,9 +237,9 @@ export const CardFile = () => {
 
               <View style={styles.viewShortDescr}>
                 <Text style={styles.setShortDescr}>
-                {cheese.description.length > 300
-                ? cheese.description.substring(0, 300) + '...'
-                : cheese.description}
+                  {cheese.description.length > 300
+                    ? cheese.description.substring(0, 300) + '...'
+                    : cheese.description}
                 </Text>
               </View>
 
@@ -264,8 +262,9 @@ export const CardFile = () => {
                   name="heart"
                 />
               </CardAction>
-            </Card>          ) : (
-              <View></View>
+            </Card>
+          ) : (
+            <View />
           ),
         )}
     </>

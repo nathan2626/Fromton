@@ -62,7 +62,6 @@ export const RecipesResumeCategories = () => {
       .then(response => setRecipes(response.data.recipes));
   }, []);
 
-
   return (
     <>
       <ScrollView horizontal nestedScrollEnabled={true}>
@@ -73,34 +72,34 @@ export const RecipesResumeCategories = () => {
             alignItems: 'center',
             marginTop: 4,
           }}>
-           {recipes &&
+          {recipes &&
             recipes.map(recipe => (
-          <ImageBackground
-            source={myImgsTable[recipe.id]}
-            style={{
-              height: height / 5,
-              width: width / 2.2,
-              position: 'relative', // because it's parent
-              marginHorizontal: 2,
-            }}>
-            <Text
-              style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.9)',
-              }}>
-                {recipe.name.length > 20
-                  ? recipe.name.substring(0, 20) + '...'
-                  : recipe.name}            
-            </Text>
-          </ImageBackground>
-          ))}
+              <ImageBackground
+                source={myImgsTable[recipe.id]}
+                style={{
+                  height: height / 5,
+                  width: width / 2.2,
+                  position: 'relative', // because it's parent
+                  marginHorizontal: 2,
+                }}>
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'center',
+                    marginTop: '40%',
+                    fontSize: 16,
+                    paddingVertical: 5,
+                    paddingHorizontal: 5,
+                    marginHorizontal: 15,
+                    backgroundColor: 'rgba(255,100,0,0.9)',
+                  }}>
+                  {recipe.name.length > 20
+                    ? recipe.name.substring(0, 20) + '...'
+                    : recipe.name}
+                </Text>
+              </ImageBackground>
+            ))}
         </View>
       </ScrollView>
     </>

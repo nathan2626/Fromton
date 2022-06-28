@@ -29,7 +29,6 @@ const Login = ({navigation}) => {
   //const userLogin = useSelector(state => state.userStock);
   //console.log(userLogin);
 
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

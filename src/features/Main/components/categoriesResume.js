@@ -71,30 +71,30 @@ export const CategoriesResume = () => {
           }}>
           {categories &&
             categories.map(category => (
-            <ImageBackground
-              source={myImgsTable[category.id]}
-              style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
-              }}>
-              <Text
+              <ImageBackground
+                source={myImgsTable[category.id]}
                 style={{
-                  fontWeight: 'bold',
-                  color: 'white',
-                  textAlign: 'center',
-                  marginTop: '40%',
-                  fontSize: 16,
-                  paddingVertical: 5,
-                  paddingHorizontal: 5,
-                  marginHorizontal: 15,
-                  backgroundColor: 'rgba(255,100,0,0.9)',
+                  height: height / 5,
+                  width: width / 2.2,
+                  position: 'relative', // because it's parent
+                  marginHorizontal: 2,
                 }}>
-                {category.name}
-              </Text>
-            </ImageBackground>
-          ))}
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'center',
+                    marginTop: '40%',
+                    fontSize: 16,
+                    paddingVertical: 5,
+                    paddingHorizontal: 5,
+                    marginHorizontal: 15,
+                    backgroundColor: 'rgba(255,100,0,0.9)',
+                  }}>
+                  {category.name}
+                </Text>
+              </ImageBackground>
+            ))}
         </View>
       </ScrollView>
     </>

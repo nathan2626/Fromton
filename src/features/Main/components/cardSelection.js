@@ -15,7 +15,7 @@ import {
   CardButton,
   CardImage,
 } from 'react-native-material-cards';
-import { useNavigation } from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/core';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import axios from 'axios';
@@ -143,7 +143,7 @@ export const CardSelectionFile = () => {
     require('../../../assets/cheeses/cheese111.png'),
     require('../../../assets/cheeses/cheese112.png'),
   ];
-  
+
   let [cheeses, setCheeses] = React.useState(null);
   useEffect(() => {
     axios
@@ -153,7 +153,6 @@ export const CardSelectionFile = () => {
 
   return (
     <>
-
       {cheeses &&
         cheeses.map(cheese =>
           cheese.id > 4 && cheese.id < 8 ? (
@@ -164,17 +163,15 @@ export const CardSelectionFile = () => {
               />
 
               <View style={styles.viewForTitleAndPriceCardSelection}>
-                <Text style={styles.setTitleCardSelection}>
-                {cheese.name}
-                </Text>
+                <Text style={styles.setTitleCardSelection}>{cheese.name}</Text>
                 <Text style={styles.setPriceCardSelection}>{cheese.price}</Text>
               </View>
 
               <View style={styles.setViewItalic}>
                 <Text style={styles.setItalicText}>
                   {cheese.subtitle.length > 26
-                  ? cheese.subtitle.substring(0, 26) + '...'
-                  : cheese.subtitle}            
+                    ? cheese.subtitle.substring(0, 26) + '...'
+                    : cheese.subtitle}
                 </Text>
               </View>
 
@@ -183,7 +180,6 @@ export const CardSelectionFile = () => {
 
                 <View style={styles.viewForRatingSelect}>
                   <Text style={styles.setTextStarsSelect}>
-                  
                     <Icon
                       name="star"
                       color={'gold'}
@@ -214,7 +210,10 @@ export const CardSelectionFile = () => {
                 </View>
               </View>
 
-              <CardAction style={styles.cardAction} separator={true} inColumn={false}>
+              <CardAction
+                style={styles.cardAction}
+                separator={true}
+                inColumn={false}>
                 <Icon
                   color={'green'}
                   size={32}
@@ -230,11 +229,11 @@ export const CardSelectionFile = () => {
                   name="heart"
                 />
               </CardAction>
-            </Card>   ) : (
-              <View></View>
-            ),
+            </Card>
+          ) : (
+            <View />
+          ),
         )}
-
     </>
   );
 };

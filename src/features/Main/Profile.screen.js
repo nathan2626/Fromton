@@ -33,7 +33,7 @@ const Profile = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [token, setToken] = useState('');
   const config = {
-    headers: { Authorization: `Bearer ${token}` }
+    headers: {Authorization: `Bearer ${token}`},
   };
   const goMe = token => {
     console.log(token);
