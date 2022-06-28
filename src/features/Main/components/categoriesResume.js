@@ -89,7 +89,7 @@ export const CategoriesResume = () => {
                   paddingVertical: 5,
                   paddingHorizontal: 5,
                   marginHorizontal: 15,
-                  backgroundColor: 'rgba(255,100,0,0.5)',
+                  backgroundColor: 'rgba(255,100,0,0.9)',
                 }}>
                 {category.name}
               </Text>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   SafeAreaView,
@@ -21,12 +21,47 @@ import {
 import {useNavigation} from '@react-navigation/core';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
+import axios from 'axios';
 const {width, height} = Dimensions.get('window');
 
 export const RecipesResumeCategories = () => {
   const navigation = useNavigation();
-  const TitleRecipe =
-    'MINI QUICHES À L’AUBERGINE GRILLÉE ET LA TOME DE PROVENCE';
+
+  const myImgsTable = [
+    require('../../../assets/recipes/1.jpeg'),
+    require('../../../assets/recipes/1.jpeg'),
+    require('../../../assets/recipes/2.jpeg'),
+    require('../../../assets/recipes/3.jpeg'),
+    require('../../../assets/recipes/4.jpeg'),
+    require('../../../assets/recipes/5.jpeg'),
+    require('../../../assets/recipes/6.jpeg'),
+    require('../../../assets/recipes/7.jpeg'),
+    require('../../../assets/recipes/8.jpeg'),
+    require('../../../assets/recipes/9.jpeg'),
+    require('../../../assets/recipes/10.jpeg'),
+    require('../../../assets/recipes/11.jpeg'),
+    require('../../../assets/recipes/13.jpeg'),
+    require('../../../assets/recipes/14.jpeg'),
+    require('../../../assets/recipes/15.jpeg'),
+    require('../../../assets/recipes/16.jpeg'),
+    require('../../../assets/recipes/17.jpeg'),
+    require('../../../assets/recipes/18.jpeg'),
+    require('../../../assets/recipes/19.jpeg'),
+    require('../../../assets/recipes/20.jpeg'),
+    require('../../../assets/recipes/21.jpeg'),
+    require('../../../assets/recipes/22.jpeg'),
+    require('../../../assets/recipes/23.jpeg'),
+    require('../../../assets/recipes/24.jpeg'),
+    require('../../../assets/recipes/25.jpeg'),
+  ];
+
+  let [recipes, setRecipes] = React.useState(null);
+  useEffect(() => {
+    axios
+      .get('https://fromton-api.herokuapp.com/api/recipes')
+      .then(response => setRecipes(response.data.recipes));
+  }, []);
+
 
   return (
     <>
@@ -38,8 +73,10 @@ export const RecipesResumeCategories = () => {
             alignItems: 'center',
             marginTop: 4,
           }}>
+           {recipes &&
+            recipes.map(recipe => (
           <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
+            source={myImgsTable[recipe.id]}
             style={{
               height: height / 5,
               width: width / 2.2,
@@ -56,107 +93,14 @@ export const RecipesResumeCategories = () => {
                 paddingVertical: 5,
                 paddingHorizontal: 5,
                 marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
+                backgroundColor: 'rgba(255,100,0,0.9)',
               }}>
-              Recette 1
+                {recipe.name.length > 20
+                  ? recipe.name.substring(0, 20) + '...'
+                  : recipe.name}            
             </Text>
           </ImageBackground>
-
-          <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
-              height: height / 5,
-              width: width / 2.2,
-              position: 'relative', // because it's parent
-              marginHorizontal: 2,
-            }}>
-            <Text
-              style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
-              }}>
-              Recette 1
-            </Text>
-          </ImageBackground>
-
-          <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
-              height: height / 5,
-              width: width / 2.2,
-              position: 'relative', // because it's parent
-              marginHorizontal: 2,
-            }}>
-            <Text
-              style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
-              }}>
-              Recette 1
-            </Text>
-          </ImageBackground>
-
-          <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
-              height: height / 5,
-              width: width / 2.2,
-              position: 'relative', // because it's parent
-              marginHorizontal: 2,
-            }}>
-            <Text
-              style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
-              }}>
-              Recette 1
-            </Text>
-          </ImageBackground>
-
-          <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
-              height: height / 5,
-              width: width / 2.2,
-              position: 'relative', // because it's parent
-              marginHorizontal: 2,
-            }}>
-            <Text
-              style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
-              }}>
-              Recette 1
-            </Text>
-          </ImageBackground>
+          ))}
         </View>
       </ScrollView>
     </>
