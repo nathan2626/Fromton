@@ -26,34 +26,33 @@ import CardSelectionFile from './components/cardSelection';
 import axios from 'axios';
 
 const Scan = () => {
+  const navigation = useNavigation();
+
   const [label, setLabel] = useState();
   const [response, setResponse] = useState(null);
 
   useEffect(() => {
-    async function getLabel(uri){
+    async function getLabel(uri) {
       const detectedLabel = await NativeModules.Detector.detect(uri);
       setLabel(detectedLabel);
     }
-    if(response){
-      try{
+    if (response) {
+      try {
         //const imageCapturee = response.assets[0].uri.replace('image: file://')
         //const imageCapturee = "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_488,q_auto,w_650/https://images-ca-1-0-1-eu.s3-eu-west-1.amazonaws.com/photos/original/1345/camembert-produit-AdobeStock_38787386.jpg"
-        const imageCapturee = response.assets[0].uri
+        const imageCapturee = response.assets[0].uri;
         //const imageCapturee = response.assets[0].uri.replace('file://','')
         //console.log('image:', imageCapturee)
         //console.log('image:',imageCapturee)
         //console.log('data:',response.assets[0].uri)
-        getLabel(imageCapturee)
-      }catch(err){
-        console.log('err:', err)
+        getLabel(imageCapturee);
+      } catch (err) {
+        console.log('err:', err);
       }
-
     }
   }, [response]);
 
-  
-
-  const handleOnPress = React.useCallback((type) => {
+  const handleOnPress = React.useCallback(type => {
     const options = {
       title: 'Select Image',
       type: 'library',
@@ -64,12 +63,10 @@ const Scan = () => {
         mediaType: 'photo',
         includeBase64: true,
       },
-    }
+    };
 
     launchImageLibrary(options, setResponse);
-  }, [])
-
-
+  }, []);
 
   const handleOnPress1 = async () => {
     /*launchImageLibrary({}, async response => {
@@ -79,7 +76,6 @@ const Scan = () => {
       }
     });*/
     //launchImageLibrary(options?, callback)
-
     // You can also use as a promise without 'callback':
     //const result = await launchImageLibrary(options?);
   };
@@ -208,207 +204,230 @@ const Scan = () => {
   }, []);
 
   return (
-   
     <View>
       <MenuFile />
-      <ScrollView style={{marginBottom: 100, marginTop: 26,}}>
-      { label ?
-        <Button title="Choisissez une autre photo" onPress={handleOnPress} />
-
-      :
-      <Button title="Choisissez une photo" onPress={handleOnPress} />
-
-      }
-        {
-          label ? 
+      <ScrollView style={{marginBottom: 100, marginTop: 26}}>
+        {label ? (
+          <Button title="Choisissez une autre photo" onPress={handleOnPress} />
+        ) : (
+          <Button title="Choisissez une photo" onPress={handleOnPress} />
+        )}
+        {label ? (
           //logique avec le GoogleNet car notre CheeseRecognition n'est pas assez entrainé
           cheeses &&
-            cheeses.map(cheese =>
-              cheese.id === 18 && label === 'arch' || label === 'iceberg' || label === 'bakery/shop' || label === 'iceberg' ?
-                <View>
-                  <Text style={{textAlign: 'center', fontSize: 20, fontWeight: '500', marginHorizontal: 10, marginTop: 32}}>Le fromage que vous avez choisis est :</Text>
-                  <Card style={styles.setCardAll}>
-                <View style={styles.viewForImgCard}>
-                  <Image
-                    source={myImgsTable[cheese.id]}
-                    style={styles.setImgCard}
-                  />
-                </View>
-
-                <View style={styles.viewForTitleAndPriceCard}>
-                  <Text style={styles.setTitleCard}>{cheese.name}</Text>
-                  <Text style={styles.setPriceCard}>{cheese.price}</Text>
-                </View>
-
-                <View style={styles.viewForSubtitleCard}>
-                  <Text style={styles.setSubtitleCard}>
-                    {cheese.subtitle.length > 42
-                    ? cheese.subtitle.substring(0, 42) + '...'
-                    : cheese.subtitle}                  
-                  </Text>
-                </View>
-
-                <View style={styles.viewAllNotation}>
-                  <Text style={styles.setTextNotation}>4,9</Text>
-
-                  <View style={styles.viewReviewsCard}>
-                    <Text style={styles.setStarsReviewsCard}>
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                    </Text>
-                    <Text style={styles.setTextReviewsCard}> 479 Avis</Text>
-                  </View>
-                </View>
-
-                <View style={styles.viewShortDescr}>
-                  <Text style={styles.setShortDescr}>
-                  {cheese.description.length > 300
-                    ? cheese.description.substring(0, 300) + '...'
-                    : cheese.description}
-                  </Text>
-                </View>
-
-                <CardAction style={styles.cardAction} separator={true} inColumn={false}>
-                  <Icon
-                    color={'green'}
-                    size={32}
-                    style={styles.setLeftFixedMenu}
-                    onPress={() => navigation.replace('Cheese')}
-                    name="add"
-                  />
-                  <Text>PARTAGER</Text>
-                  <Icon
-                    color={'red'}
-                    size={32}
-                    style={styles.setRightFixedMenu}
-                    name="heart"
-                  />
-                </CardAction>
-              </Card>
-
-      
-                </View>
-              : cheese.id === 6 && label === 'reception' || label === 'home_office' || label === 'aquarium' || label === 'museum/indoor' ?
-
+          cheeses.map(cheese =>
+            (cheese.id === 18 && label === 'arch') ||
+            label === 'iceberg' ||
+            label === 'bakery/shop' ||
+            label === 'iceberg' ? (
               <View>
-                  <Text style={{textAlign: 'center', fontSize: 20, fontWeight: '500', marginHorizontal: 10, marginTop: 32}}>Le fromage que vous avez choisis est :</Text>
-                  <Card style={styles.setCardAll}>
-                <View style={styles.viewForImgCard}>
-                  <Image
-                    source={myImgsTable[cheese.id]}
-                    style={styles.setImgCard}
-                  />
-                </View>
-
-                <View style={styles.viewForTitleAndPriceCard}>
-                  <Text style={styles.setTitleCard}>{cheese.name}</Text>
-                  <Text style={styles.setPriceCard}>{cheese.price}</Text>
-                </View>
-
-                <View style={styles.viewForSubtitleCard}>
-                  <Text style={styles.setSubtitleCard}>
-                    {cheese.subtitle.length > 42
-                    ? cheese.subtitle.substring(0, 42) + '...'
-                    : cheese.subtitle}                  
-                  </Text>
-                </View>
-
-                <View style={styles.viewAllNotation}>
-                  <Text style={styles.setTextNotation}>4,9</Text>
-
-                  <View style={styles.viewReviewsCard}>
-                    <Text style={styles.setStarsReviewsCard}>
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                      <Icon
-                        name="star"
-                        color={'gold'}
-                        style={styles.setStarsReviewsCard}
-                      />
-                    </Text>
-                    <Text style={styles.setTextReviewsCard}> 479 Avis</Text>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    fontSize: 20,
+                    fontWeight: '500',
+                    marginHorizontal: 10,
+                    marginTop: 32,
+                  }}>
+                  Le fromage que vous avez choisis est :
+                </Text>
+                <Card style={styles.setCardAll}>
+                  <View style={styles.viewForImgCard}>
+                    <Image
+                      source={myImgsTable[cheese.id]}
+                      style={styles.setImgCard}
+                    />
                   </View>
-                </View>
 
-                <View style={styles.viewShortDescr}>
-                  <Text style={styles.setShortDescr}>
-                  {cheese.description.length > 300
-                    ? cheese.description.substring(0, 300) + '...'
-                    : cheese.description}
-                  </Text>
-                </View>
+                  <View style={styles.viewForTitleAndPriceCard}>
+                    <Text style={styles.setTitleCard}>{cheese.name}</Text>
+                    <Text style={styles.setPriceCard}>{cheese.price}</Text>
+                  </View>
 
-                <CardAction style={styles.cardAction} separator={true} inColumn={false}>
-                  <Icon
-                    color={'green'}
-                    size={32}
-                    style={styles.setLeftFixedMenu}
-                    onPress={() => navigation.replace('Cheese')}
-                    name="add"
-                  />
-                  <Text>PARTAGER</Text>
-                  <Icon
-                    color={'red'}
-                    size={32}
-                    style={styles.setRightFixedMenu}
-                    name="heart"
-                  />
-                </CardAction>
-              </Card>
+                  <View style={styles.viewForSubtitleCard}>
+                    <Text style={styles.setSubtitleCard}>
+                      {cheese.subtitle.length > 42
+                        ? cheese.subtitle.substring(0, 42) + '...'
+                        : cheese.subtitle}
+                    </Text>
+                  </View>
 
-      
-                </View>
-              :
-              <View></View>
+                  <View style={styles.viewAllNotation}>
+                    <Text style={styles.setTextNotation}>4,9</Text>
 
-        
+                    <View style={styles.viewReviewsCard}>
+                      <Text style={styles.setStarsReviewsCard}>
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                      </Text>
+                      <Text style={styles.setTextReviewsCard}> 479 Avis</Text>
+                    </View>
+                  </View>
+
+                  <View style={styles.viewShortDescr}>
+                    <Text style={styles.setShortDescr}>
+                      {cheese.description.length > 300
+                        ? cheese.description.substring(0, 300) + '...'
+                        : cheese.description}
+                    </Text>
+                  </View>
+
+                  <CardAction
+                    style={styles.cardAction}
+                    separator={true}
+                    inColumn={false}>
+                    <Icon
+                      color={'green'}
+                      size={32}
+                      style={styles.setLeftFixedMenu}
+                      onPress={() => navigation.replace('Cheese')}
+                      name="add"
+                    />
+                    <Text>PARTAGER</Text>
+                    <Icon
+                      color={'red'}
+                      size={32}
+                      style={styles.setRightFixedMenu}
+                      name="heart"
+                    />
+                  </CardAction>
+                </Card>
+              </View>
+            ) : (cheese.id === 6 && label === 'reception') ||
+              label === 'home_office' ||
+              label === 'aquarium' ||
+              label === 'museum/indoor' ? (
+              <View>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    fontSize: 20,
+                    fontWeight: '500',
+                    marginHorizontal: 10,
+                    marginTop: 32,
+                  }}>
+                  Le fromage que vous avez choisis est :
+                </Text>
+                <Card style={styles.setCardAll}>
+                  <View style={styles.viewForImgCard}>
+                    <Image
+                      source={myImgsTable[cheese.id]}
+                      style={styles.setImgCard}
+                    />
+                  </View>
+
+                  <View style={styles.viewForTitleAndPriceCard}>
+                    <Text style={styles.setTitleCard}>{cheese.name}</Text>
+                    <Text style={styles.setPriceCard}>{cheese.price}</Text>
+                  </View>
+
+                  <View style={styles.viewForSubtitleCard}>
+                    <Text style={styles.setSubtitleCard}>
+                      {cheese.subtitle.length > 42
+                        ? cheese.subtitle.substring(0, 42) + '...'
+                        : cheese.subtitle}
+                    </Text>
+                  </View>
+
+                  <View style={styles.viewAllNotation}>
+                    <Text style={styles.setTextNotation}>4,9</Text>
+
+                    <View style={styles.viewReviewsCard}>
+                      <Text style={styles.setStarsReviewsCard}>
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                        <Icon
+                          name="star"
+                          color={'gold'}
+                          style={styles.setStarsReviewsCard}
+                        />
+                      </Text>
+                      <Text style={styles.setTextReviewsCard}> 479 Avis</Text>
+                    </View>
+                  </View>
+
+                  <View style={styles.viewShortDescr}>
+                    <Text style={styles.setShortDescr}>
+                      {cheese.description.length > 300
+                        ? cheese.description.substring(0, 300) + '...'
+                        : cheese.description}
+                    </Text>
+                  </View>
+
+                  <CardAction
+                    style={styles.cardAction}
+                    separator={true}
+                    inColumn={false}>
+                    <Icon
+                      color={'green'}
+                      size={32}
+                      style={styles.setLeftFixedMenu}
+                      onPress={() => navigation.replace('Cheese')}
+                      name="add"
+                    />
+                    <Text>PARTAGER</Text>
+                    <Icon
+                      color={'red'}
+                      size={32}
+                      style={styles.setRightFixedMenu}
+                      name="heart"
+                    />
+                  </CardAction>
+                </Card>
+              </View>
+            ) : (
+              <View />
+            ),
           )
-          : <View></View>
-        }
+        ) : (
+          <View />
+        )}
         <View style={styles.ViewForTitleImg}>
-          <Text style={styles.setTextSelection}>Ces fromages peuvent vous interesser</Text>
-      </View>
+          <Text style={styles.setTextSelection}>
+            Ces fromages peuvent vous interesser
+          </Text>
+        </View>
 
         <ScrollView
           style={styles.setScrollViewSelection}

@@ -15,6 +15,7 @@ import RecipeResume from './components/recipeResume';
 import MenuCheese from './components/menuCheese';
 import styles from './Cheese.styles';
 import LinearGradient from 'react-native-linear-gradient';
+import { useRoute } from '@react-navigation/core';
 
 const START_DEFAULT = {x: 0, y: 1};
 const END_DEFAULT = {x: 0.5, y: 0.5};
@@ -25,7 +26,7 @@ const {width, height} = Dimensions.get('window');
 
 const Cheese = () => {
   const navigation = useNavigation();
-
+  const route = useRoute();
   return (
     <>
       <MenuCheese />
@@ -41,7 +42,8 @@ const Cheese = () => {
         <View>
           <Text
             style={styles.setCategoryTitle}>
-            Franche-Comté
+            {/* {navigation.setParams('name')} */}
+            {route.params.category}
           </Text>
         </View>
         <View style={styles.detailsContainer}>
@@ -49,18 +51,20 @@ const Cheese = () => {
             style={styles.setViewSubtitleCheese}>
             <Text
               style={styles.setSubtitleCheese}>
-              Comté 12 mois d'affinage
+                          {route.params.subtitle}
+
             </Text>
           </View>
           <View
             style={styles.setViewTitleCheese}>
             <Text style={styles.setTitleCheese}>
-              Comté 12 mois d'affinage
+            {route.params.name}
+
             </Text>
             <View style={styles.priceTag}>
               <Text
                 style={styles.setPriceCheese}>
-                4.99€
+            {route.params.price}
               </Text>
             </View>
           </View>
@@ -104,11 +108,8 @@ const Cheese = () => {
             </Text>
             <Text
               style={styles.setLabelDescription}>
-              Potted Plant Ravenea Plant one of the most popular and beautiful
-              species that will produce clumpms. The storage of water often
-              gives succulent plants a more swollen or fleshy appearance than
-              other plants, a characteristic known as succulence. Potted Plant
-              Ravenea Plant one of the most popular.
+                          {route.params.description}
+
             </Text>
 
             <View style={styles.setViewAllLabels}>
@@ -117,7 +118,8 @@ const Cheese = () => {
                 Lait de :{' '}
                 <Text
                   style={styles.setAnswInf}>
-                  Vache
+                              {route.params.milk}
+
                 </Text>{' '}
               </Text>
               <Text
@@ -125,7 +127,7 @@ const Cheese = () => {
                 Affinage :{' '}
                 <Text
                   style={styles.setAnswInf}>
-                  2 mois
+            {route.params.refining}
                 </Text>{' '}
               </Text>
               <Text
@@ -133,7 +135,7 @@ const Cheese = () => {
                 Poids :{' '}
                 <Text
                   style={styles.setAnswInf}>
-                  500g
+            {route.params.pound}
                 </Text>{' '}
               </Text>
               <Text
@@ -141,7 +143,7 @@ const Cheese = () => {
                 Pâte :{' '}
                 <Text
                   style={styles.setAnswInf}>
-                  Pâte molle à croûte fleurie
+            {route.params.pate}
                 </Text>{' '}
               </Text>
             </View>
@@ -153,7 +155,7 @@ const Cheese = () => {
               style={styles.perfectWine}>
               Le vin parfait pour le Comté 12 mois d'affinage est le{' '}
               <Text style={styles.wineSpecial}>
-                Vin jaune
+              {route.params.wine}
               </Text>
               .
             </Text>
@@ -167,9 +169,7 @@ const Cheese = () => {
               horizontal
               nestedScrollEnabled={true}>
               <RecipeResume />
-              <RecipeResume />
-              <RecipeResume />
-              <RecipeResume />
+            
             </ScrollView>
 
             <Text
