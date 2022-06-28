@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   SafeAreaView,
@@ -21,155 +21,82 @@ import {
 import {useNavigation} from '@react-navigation/core';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
+import axios from 'axios';
+
 const {width, height} = Dimensions.get('window');
 
 export const CategoriesResume = () => {
   const navigation = useNavigation();
-  const TitleRecipe =
-    'MINI QUICHES À L’AUBERGINE GRILLÉE ET LA TOME DE PROVENCE';
+
+  const myImgsTable = [
+    require('../../../assets/categories/Franche-compté.png'),
+    require('../../../assets/categories/Franche-compté.png'),
+    require('../../../assets/categories/Bourgogne.png'),
+    require('../../../assets/categories/Rhône-Alpes.png'),
+    require('../../../assets/categories/Provence.png'),
+    require('../../../assets/categories/Auvergne.png'),
+    require('../../../assets/categories/Midi-Pyrénées.png'),
+    require('../../../assets/categories/Île-de-France.png'),
+    require('../../../assets/categories/Italie.png'),
+    require('../../../assets/categories/Normandie.png'),
+    require('../../../assets/categories/Lorraine.png'),
+    require('../../../assets/categories/Poitou-Charentes.png'),
+    require('../../../assets/categories/Champagne-Ard.png'),
+    require('../../../assets/categories/Angleterre.png'),
+    require('../../../assets/categories/Centre.png'),
+    require('../../../assets/categories/Aquitaine.png'),
+    require('../../../assets/categories/Corse.png'),
+    require('../../../assets/categories/Pays-Bas.png'),
+    require('../../../assets/categories/Suisse.png'),
+    require('../../../assets/categories/Nord-Pas-de-Calais.png'),
+    require('../../../assets/categories/Alsace.png'),
+  ];
+
+  let [categories, setCategories] = React.useState(null);
+  useEffect(() => {
+    axios
+      .get('https://fromton-api.herokuapp.com/api/categories')
+      .then(response => setCategories(response.data.categories));
+  }, []);
 
   return (
     <>
-
-      <ScrollView
-      horizontal
-              nestedScrollEnabled={true}>
+      <ScrollView horizontal nestedScrollEnabled={true}>
         <View
-            style={{
+          style={{
             flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: 4,
-            }}>
-
-
+          }}>
+          {categories &&
+            categories.map(category => (
             <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
+              source={myImgsTable[category.id]}
+              style={{
                 height: height / 5,
                 width: width / 2.2,
                 position: 'relative', // because it's parent
                 marginHorizontal: 2,
-            }}>
-            <Text
+              }}>
+              <Text
                 style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
+                  fontWeight: 'bold',
+                  color: 'white',
+                  textAlign: 'center',
+                  marginTop: '40%',
+                  fontSize: 16,
+                  paddingVertical: 5,
+                  paddingHorizontal: 5,
+                  marginHorizontal: 15,
+                  backgroundColor: 'rgba(255,100,0,0.5)',
                 }}>
-                Recette 1
-            </Text>
+                {category.name}
+              </Text>
             </ImageBackground>
-
-            <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
-            }}>
-            <Text
-                style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
-            </Text>
-            </ImageBackground>
-
-            <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
-            }}>
-            <Text
-                style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
-            </Text>
-            </ImageBackground>
-
-            <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
-            }}>
-            <Text
-                style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
-            </Text>
-            </ImageBackground>
-
-            <ImageBackground
-            source={require('../../../assets/categories/Alsace.png')}
-            style={{
-                height: height / 5,
-                width: width / 2.2,
-                position: 'relative', // because it's parent
-                marginHorizontal: 2,
-            }}>
-            <Text
-                style={{
-                fontWeight: 'bold',
-                color: 'white',
-                textAlign: 'center',
-                marginTop: '40%',
-                fontSize: 16,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
-                marginHorizontal: 15,
-                backgroundColor: 'rgba(255,100,0,0.5)',
-                }}>
-                Recette 1
-            </Text>
-            </ImageBackground>
-
-         
-            
+          ))}
         </View>
-      </ScrollView>  
-     
-      
-
+      </ScrollView>
     </>
   );
 };
