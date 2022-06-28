@@ -33,7 +33,7 @@ const Register = ({navigation}) => {
   const goRegister = (name, email, password) => {
     console.log(name, email, password);
     axios
-      .post('http://127.0.0.1:8000/api/auth/register', {
+      .post('https://fromton-api.herokuapp.com/api/auth/register', {
         name,
         email,
         password,

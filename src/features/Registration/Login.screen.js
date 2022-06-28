@@ -35,7 +35,7 @@ const Login = ({navigation}) => {
   const goLogin = (email, password) => {
     console.log(email, password);
     axios
-      .post('http://127.0.0.1:8000/api/auth/login', {
+      .post('https://fromton-api.herokuapp.com/api/auth/login', {
         email,
         password,
         device_name: 'App',

@@ -342,18 +342,18 @@ const Cheese = () => {
 
                   <View style={styles.viewForTitleAndPriceCardSelection}>
                     <Text style={styles.setTitleCardSelection}>
-                      {/* {TitleRecipe.length > 30
-                        ? TitleRecipe.substring(0, 30) + '...'
-                        : TitleRecipe} */}
+                      {recipe.name.length > 26
+                        ? recipe.name.substring(0, 26) + '...'
+                        : recipe.name}
                     </Text>
                   </View>
 
                   <View style={styles.setViewItalic}>
-                    <Text style={styles.setItalicText}>{route.params.name}</Text>
+                    <Text style={styles.setItalicText}>{recipe.cook + recipe.time} de réalisation au total.</Text>
                   </View>
 
                   <View style={styles.viewForNotationCardSelec}>
-                    <Text style={styles.textNotationSelectCard}>{route.params.nbrpers}</Text>
+                    <Text style={styles.textNotationSelectCard}>{recipe.nbrpers}</Text>
 
                     <View style={styles.viewForRatingSelect}>
                       <Text style={styles.setTextReviewsSelect}> Personnes</Text>
