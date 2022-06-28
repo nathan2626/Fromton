@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -45,86 +45,111 @@ export const CardFile = () => {
   // }
   const navigation = useNavigation();
 
+  const path = '../../../assets/cheeses/';
+  const pathFinal = '.png';
+
+  let [cheeses, setCheeses] = React.useState(null);
+  useEffect(() => {
+    axios
+      .get('http://127.0.0.1:8000/api/cheeses')
+      .then(response => setCheeses(response.data.cheeses));
+  }, []);
+
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:8000/api/cheeses")
+  //   .then(response => response.json())
+  //       // 4. Setting *dogImage* to the image url that we received from the response above
+  //   .then(data => setCheeses(data.cheeses[0]))
+  // },[])
+
   return (
     <>
-      <Card style={styles.setCardAll}>
-        <View style={styles.viewForImgCard}>
-          <Image
-            source={require('../../../assets/cheeses/cheese1.png')}
-            style={styles.setImgCard}
-          />
-        </View>
-
-        <View style={styles.viewForTitleAndPriceCard}>
-          <Text style={styles.setTitleCard}>Comté 12 mois d'affinage</Text>
-          <Text style={styles.setPriceCard}> 4.99€</Text>
-        </View>
-
-        <View style={styles.viewForSubtitleCard}>
-          <Text style={styles.setSubtitleCard}>Comté 12 mois d'affinage</Text>
-        </View>
-
-        <View style={styles.viewAllNotation}>
-          <Text style={styles.setTextNotation}>4,9</Text>
-
-          <View style={styles.viewReviewsCard}>
-            <Text style={styles.setStarsReviewsCard}>
-              <Icon
-                name="star"
-                color={'gold'}
-                style={styles.setStarsReviewsCard}
+      {cheeses &&
+        cheeses.map(cheese => (
+          cheese.id > 3 ?
+          <Text></Text>
+          :  <Card style={styles.setCardAll}>
+            <View style={styles.viewForImgCard}>
+  
+              <Image
+                source={require(`../../../assets/cheeses/cheese1.png`)}
+                style={styles.setImgCard}
               />
-              <Icon
-                name="star"
-                color={'gold'}
-                style={styles.setStarsReviewsCard}
-              />
-              <Icon
-                name="star"
-                color={'gold'}
-                style={styles.setStarsReviewsCard}
-              />
-              <Icon
-                name="star"
-                color={'gold'}
-                style={styles.setStarsReviewsCard}
-              />
-              <Icon
-                name="star"
-                color={'gold'}
-                style={styles.setStarsReviewsCard}
-              />
-            </Text>
-            <Text style={styles.setTextReviewsCard}> 479 Avis</Text>
-          </View>
-        </View>
+         
+             
+            </View>
 
-        <View style={styles.viewShortDescr}>
-          <Text style={styles.setShortDescr}>
-            Potted Plant Ravenea Plant one of the most popular and beautiful
-            species that will produce clumpms. The storage of water often gives
-            succulent plants a more swollen or fleshy appearance than other
-            plants, a characteristic known as succulence.
-          </Text>
-        </View>
+            <View style={styles.viewForTitleAndPriceCard}>
+              <Text style={styles.setTitleCard}>{cheese.name}</Text>
+              <Text style={styles.setPriceCard}> 4.99€</Text>
+            </View>
 
-        <CardAction style={styles.cardAction} separator={true} inColumn={false}>
-          <Icon
-            color={'green'}
-            size={32}
-            style={styles.setLeftFixedMenu}
-            onPress={() => navigation.replace('Cheese')}
-            name="add"
-          />
-          <Text>PARTAGER</Text>
-          <Icon
-            color={'red'}
-            size={32}
-            style={styles.setRightFixedMenu}
-            name="heart"
-          />
-        </CardAction>
-      </Card>
+            <View style={styles.viewForSubtitleCard}>
+              <Text style={styles.setSubtitleCard}>
+                Comté 12 mois d'affinage
+              </Text>
+            </View>
+
+            <View style={styles.viewAllNotation}>
+              <Text style={styles.setTextNotation}>4,9</Text>
+
+              <View style={styles.viewReviewsCard}>
+                <Text style={styles.setStarsReviewsCard}>
+                  <Icon
+                    name="star"
+                    color={'gold'}
+                    style={styles.setStarsReviewsCard}
+                  />
+                  <Icon
+                    name="star"
+                    color={'gold'}
+                    style={styles.setStarsReviewsCard}
+                  />
+                  <Icon
+                    name="star"
+                    color={'gold'}
+                    style={styles.setStarsReviewsCard}
+                  />
+                  <Icon
+                    name="star"
+                    color={'gold'}
+                    style={styles.setStarsReviewsCard}
+                  />
+                  <Icon
+                    name="star"
+                    color={'gold'}
+                    style={styles.setStarsReviewsCard}
+                  />
+                </Text>
+                <Text style={styles.setTextReviewsCard}> 479 Avis</Text>
+              </View>
+            </View>
+
+            <View style={styles.viewShortDescr}>
+              <Text style={styles.setShortDescr}>{cheese.description}</Text>
+            </View>
+
+            <CardAction
+              style={styles.cardAction}
+              separator={true}
+              inColumn={false}>
+              <Icon
+                color={'green'}
+                size={32}
+                style={styles.setLeftFixedMenu}
+                onPress={() => navigation.replace('Cheese')}
+                name="add"
+              />
+              <Text>PARTAGER</Text>
+              <Icon
+                color={'red'}
+                size={32}
+                style={styles.setRightFixedMenu}
+                name="heart"
+              />
+            </CardAction>
+          </Card>
+        ))}
     </>
   );
 };

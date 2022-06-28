@@ -40,7 +40,6 @@ const Home = ({navigation}) => {
         <Text style={styles.titleChoiceMoment}>Les choix du moment</Text>
 
         <CardFile />
-        <CardFile />
 
         <View style={styles.ViewForTitleImgNews}>
           <Text style={styles.setTextSelection}>Les nouveautés</Text>
@@ -54,9 +53,6 @@ const Home = ({navigation}) => {
           horizontal
           nestedScrollEnabled={true}>
           <CardSelectionFile />
-          <CardSelectionFile />
-          <CardSelectionFile />
-          <CardSelectionFile />
         </ScrollView>
         <View style={styles.viewForGreenBgAfterSelect} />
 
@@ -64,7 +60,6 @@ const Home = ({navigation}) => {
           Les meilleurs choix de la communauté
         </Text>
 
-        <CardFile />
         <CardFile />
 
         <View style={styles.ViewForTitleImg}>
@@ -79,9 +74,6 @@ const Home = ({navigation}) => {
           style={styles.setScrollViewSelection}
           horizontal
           nestedScrollEnabled={true}>
-          <CardSelectionFile />
-          <CardSelectionFile />
-          <CardSelectionFile />
           <CardSelectionFile />
         </ScrollView>
 
