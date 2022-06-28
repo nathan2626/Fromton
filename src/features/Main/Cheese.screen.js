@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   SafeAreaView,
@@ -7,6 +7,14 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
+import {
+  Card,
+  CardTitle,
+  CardContent,
+  CardAction,
+  CardButton,
+  CardImage,
+} from 'react-native-material-cards';
 import COLORS from '../../consts/colors';
 import {useNavigation} from '@react-navigation/core';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -15,7 +23,8 @@ import RecipeResume from './components/recipeResume';
 import MenuCheese from './components/menuCheese';
 import styles from './Cheese.styles';
 import LinearGradient from 'react-native-linear-gradient';
-import { useRoute } from '@react-navigation/core';
+import {useRoute} from '@react-navigation/core';
+import axios from 'axios';
 
 const START_DEFAULT = {x: 0, y: 1};
 const END_DEFAULT = {x: 0.5, y: 0.5};
@@ -27,6 +36,43 @@ const {width, height} = Dimensions.get('window');
 const Cheese = () => {
   const navigation = useNavigation();
   const route = useRoute();
+
+  const myImgsTable = [
+    require('../../assets/recipes/1.jpeg'),
+    require('../../assets/recipes/1.jpeg'),
+    require('../../assets/recipes/2.jpeg'),
+    require('../../assets/recipes/3.jpeg'),
+    require('../../assets/recipes/4.jpeg'),
+    require('../../assets/recipes/5.jpeg'),
+    require('../../assets/recipes/6.jpeg'),
+    require('../../assets/recipes/7.jpeg'),
+    require('../../assets/recipes/8.jpeg'),
+    require('../../assets/recipes/9.jpeg'),
+    require('../../assets/recipes/10.jpeg'),
+    require('../../assets/recipes/11.jpeg'),
+    require('../../assets/recipes/13.jpeg'),
+    require('../../assets/recipes/14.jpeg'),
+    require('../../assets/recipes/15.jpeg'),
+    require('../../assets/recipes/16.jpeg'),
+    require('../../assets/recipes/17.jpeg'),
+    require('../../assets/recipes/18.jpeg'),
+    require('../../assets/recipes/19.jpeg'),
+    require('../../assets/recipes/20.jpeg'),
+    require('../../assets/recipes/21.jpeg'),
+    require('../../assets/recipes/22.jpeg'),
+    require('../../assets/recipes/23.jpeg'),
+    require('../../assets/recipes/24.jpeg'),
+    require('../../assets/recipes/25.jpeg'),
+  ];
+
+  let [recipes, setRecipes] = React.useState(null);
+  useEffect(() => {
+    axios
+      .get('https://fromton-api.herokuapp.com/api/recipes')
+      .then(response => setRecipes(response.data.recipes));
+  }, []);
+
+
   return (
     <>
       <MenuCheese />
@@ -168,8 +214,56 @@ const Cheese = () => {
               style={styles.setScrollViewNews}
               horizontal
               nestedScrollEnabled={true}>
-              <RecipeResume />
-            
+
+            {recipes &&
+              recipes.map(recipe => (
+                recipe.id === route.params.id ?
+                <Card style={styles.allCardSelection}>
+                  <Image
+                    source={myImgsTable[route.params.id]}
+                    style={styles.setImgCardSelection}
+                  />
+
+                  <View style={styles.viewForTitleAndPriceCardSelection}>
+                    <Text style={styles.setTitleCardSelection}>
+                      {/* {TitleRecipe.length > 30
+                        ? TitleRecipe.substring(0, 30) + '...'
+                        : TitleRecipe} */}
+                    </Text>
+                  </View>
+
+                  <View style={styles.setViewItalic}>
+                    <Text style={styles.setItalicText}>{route.params.name}</Text>
+                  </View>
+
+                  <View style={styles.viewForNotationCardSelec}>
+                    <Text style={styles.textNotationSelectCard}>{route.params.nbrpers}</Text>
+
+                    <View style={styles.viewForRatingSelect}>
+                      <Text style={styles.setTextReviewsSelect}> Personnes</Text>
+                    </View>
+                  </View>
+
+                  <CardAction style={styles.cardAction} separator={true} inColumn={false}>
+                    <Icon
+                      color={'green'}
+                      size={32}
+                      style={styles.setLeftFixedMenu}
+                      onPress={() => navigation.replace('Recipe', recipe)}
+                      name="add"
+                    />
+                    <Text>PARTAGER</Text>
+                    <Icon
+                      color={'red'}
+                      size={32}
+                      style={styles.setRightFixedMenu}
+                      name="heart"
+                    />
+                  </CardAction>
+                </Card>
+                : <View></View>
+              ))}
+
             </ScrollView>
 
             <Text
