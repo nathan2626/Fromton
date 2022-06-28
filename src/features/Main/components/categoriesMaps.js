@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   SafeAreaView,
@@ -17,60 +17,66 @@ const {width, height} = Dimensions.get('window');
 const CategoriesMaps = () => {
   const navigation = useNavigation();
 
-  //for dynamic value
-  const [displayOrigines, setDisplayOrigines] = useState(true);
-  const [displayRecipes, setDisplayRecipes] = useState(true);
+  const myImgsTable = [
+    require('../../../assets/categories/Franche-compté.png'),
+    require('../../../assets/categories/Franche-compté.png'),
+    require('../../../assets/categories/Bourgogne.png'),
+    require('../../../assets/categories/Rhône-Alpes.png'),
+    require('../../../assets/categories/Provence.png'),
+    require('../../../assets/categories/Auvergne.png'),
+    require('../../../assets/categories/Midi-Pyrénées.png'),
+    require('../../../assets/categories/Île-de-France.png'),
+    require('../../../assets/categories/Italie.png'),
+    require('../../../assets/categories/Normandie.png'),
+    require('../../../assets/categories/Lorraine.png'),
+    require('../../../assets/categories/Poitou-Charentes.png'),
+    require('../../../assets/categories/Champagne-Ard.png'),
+    require('../../../assets/categories/Angleterre.png'),
+    require('../../../assets/categories/Centre.png'),
+    require('../../../assets/categories/Aquitaine.png'),
+    require('../../../assets/categories/Corse.png'),
+    require('../../../assets/categories/Pays-Bas.png'),
+    require('../../../assets/categories/Suisse.png'),
+    require('../../../assets/categories/Nord-Pas-de-Calais.png'),
+    require('../../../assets/categories/Alsace.png'),
+  ];
 
-  const toggleDisplayOrigines = () => {
-    setDisplayOrigines(!displayOrigines);
-  };
-
-  const goCategories = () => {
+  let [categories, setCategories] = React.useState(null);
+  useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/categories')
-      .then(function (response) {
-        console.log(response.data);
-        /*if (response.status === 200) {
-          //dispatch('userStock', response.data);
-          navigation.reset({
-            index: 0,
-            routes: [{name: 'BottomNav'}],
-          });
-          //navigation.replace('BottomNav');
-        }*/
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+      .get('https://fromton-api.herokuapp.com/api/categories')
+      .then(response => setCategories(response.data.categories));
+  }, []);
 
   return (
     <>
-      <ImageBackground
-        source={require('../../../assets/categories/Alsace.png')}
-        style={{
-          height: height / 3,
-          width: width * 0.87,
-          position: 'relative', // because it's parent
-          marginHorizontal: 10,
-          marginBottom: 28,
-        }}>
-        <Text
-          onPress={() => goCategories()}
-          style={{
-            fontWeight: '500',
-            color: 'white',
-            textAlign: 'center',
-            marginTop: '40%',
-            fontSize: 22,
-            paddingVertical: 5,
-            paddingHorizontal: 5,
-            marginHorizontal: 40,
-            backgroundColor: 'rgba(0,0,0,0.5)',
-          }}>
-          Alsace
-        </Text>
-      </ImageBackground>
+      {categories &&
+        categories.map(category => (
+          <ImageBackground
+            source={myImgsTable[category.id]}
+            style={{
+              height: height / 3,
+              width: width * 0.87,
+              position: 'relative', // because it's parent
+              marginHorizontal: 10,
+              marginBottom: 28,
+            }}>
+            <Text
+              style={{
+                fontWeight: '500',
+                color: 'white',
+                textAlign: 'center',
+                marginTop: '40%',
+                fontSize: 22,
+                paddingVertical: 5,
+                paddingHorizontal: 5,
+                marginHorizontal: 40,
+                backgroundColor: 'rgba(0,0,0,0.5)',
+              }}>
+              {category.name}
+            </Text>
+          </ImageBackground>
+        ))}
     </>
   );
 };
