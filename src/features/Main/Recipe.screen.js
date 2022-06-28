@@ -162,7 +162,48 @@ const Recipe = () => {
 
           <View style={styles.displayDynamicContent}>
 
-            {displayIngredients ? <Ingredients /> : <Steps />}
+            {displayIngredients ? 
+            
+
+            <View style={styles.viewForPadding2}>
+              <Text style={styles.setLabelInfo2}>CE QU'IL VOUS FAUT :</Text>
+              <Text style={styles.setLabelDescription2}>
+              {route.params.ingredients}
+              </Text>
+
+              
+              <Text style={styles.wineChoose2}>Quel vin choisir ?</Text>
+              <Text style={styles.perfectWine2}>
+                  Le vin parfait pour cette recette est le{' '}
+                  <Text style={styles.wineSpecial2}>Vin jaune</Text>.
+              </Text>
+
+              <Text style={styles.setTexteQuestion2}>Une question ?</Text>
+              <Text style={styles.setTexteSupport2}>Contactez le support !</Text>
+            </View>
+            
+            
+            : 
+            
+            <View style={styles.viewForPadding2}>
+              <Text style={styles.setLabelInfo2}>ETAPES :</Text>
+              <Text style={styles.setLabelDescription2}>
+              {route.params.steps}
+
+              </Text>
+
+              
+              <Text style={styles.wineChoose2}>Quel vin choisir ?</Text>
+              <Text style={styles.perfectWine2}>
+                  Le vin parfait pour cette recette est le{' '}
+                  <Text style={styles.wineSpecial2}>Vin jaune</Text>.
+              </Text>
+
+              <Text style={styles.setTexteQuestion2}>Une question ?</Text>
+              <Text style={styles.setTexteSupport2}>Contactez le support !</Text>
+            </View>
+              
+            }
           </View>
 
         </View>

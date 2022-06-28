@@ -268,6 +268,52 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  viewForPadding2: {
+    paddingHorizontal: 20,
+    marginTop: -10,
+  },
+  setLabelInfo2: {
+    fontSize: 19,
+    fontWeight: 'bold',
+    marginTop: 26,
+  },
+  setLabelDescription2: {
+    color: 'grey',
+    fontSize: 16,
+    lineHeight: 22,
+    marginTop: 5,
+    textAlign: 'justify',
+  },
+  perfectWine2: {
+    color: 'grey',
+    fontSize: 16,
+    lineHeight: 22,
+    marginTop: 4,
+    textAlign: 'justify',
+  },
+  wineSpecial2: {
+    color: 'orange',
+    fontWeight: '500',
+  },
+  wineChoose2: {
+    fontSize: 19,
+    fontWeight: 'bold',
+    marginTop: 20,
+  },
+  setTexteQuestion2: {
+    textAlign: 'center',
+    fontSize: 19,
+    fontWeight: 'bold',
+    marginTop: 20,
+  },
+  setTexteSupport2: {
+    color: 'grey',
+    fontSize: 16,
+    lineHeight: 22,
+    marginTop: 4,
+    textAlign: 'center',
+    paddingBottom: 20,
+  },
 });
 
 export default styles;
