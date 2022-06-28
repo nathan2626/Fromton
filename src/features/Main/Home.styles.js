@@ -14,14 +14,14 @@ const styles = StyleSheet.create({
 
   /* La selection Fromton  */
   ViewForTitleImg: {
-    marginTop: -1500,
+    marginTop: 10,
     backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
   },
   ViewForTitleImgNews: {
-    marginTop: -1500,
+    marginTop: 10,
     backgroundColor: 'green',
     justifyContent: 'center',
     alignItems: 'center',
