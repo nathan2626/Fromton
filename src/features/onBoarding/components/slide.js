@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
   slideViewImg: {
     alignItems: 'center',
     padding: 0,
-    margin: 0,
+    marginTop: 50,
+    height: '60%',
   },
   slideViewSetImg: {
-    height: '70%',
     width,
     resizeMode: 'contain',
   },

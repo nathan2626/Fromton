@@ -8,23 +8,23 @@ const slides = [
   },
   {
     id: '2',
-    image: require('../../../assets/lottie/18252-just-cheese.json'),
-    title: 'Des producteurs locaux',
+    image: require('../../../assets/lottie/107669-cooking.json'),
+    title: 'Envie de recette ?',
     subtitle:
-      "Notre application vous propose d'accéder à une selection de fromage depuis votre téléphone.",
+      "Notre application vous propose d'acheter les ingrédients des recettes.",
   },
   {
     id: '3',
-    image: require('../../../assets/lottie/18252-just-cheese.json'),
-    title: 'Regardez, scannez et découvez',
+    image: require('../../../assets/lottie/54509-discover-fill-active-inactive-icon-animation.json'),
+    title: 'Découvrir des fromages ?',
     subtitle:
-      "Scannez n'importe quel fromage pour en savoir plus sur celui-ci.",
+      "Avec nos boxs fromages, vous découvrirez des fromages aux saveurs exquises !",
   },
   {
     id: '4',
-    image: require('../../../assets/lottie/18252-just-cheese.json'),
-    title: 'Régalez vos papilles !',
-    subtitle: 'Conservez définitivement vos scans de fromage.',
+    image: require('../../../assets/lottie/lf30_editor_oivoqbwl.json'),
+    title: 'Regardez, scannez et découvez',
+    subtitle: "Scannez n'importe quel fromage pour en savoir plus sur celui-ci.",
   },
 ];
 
