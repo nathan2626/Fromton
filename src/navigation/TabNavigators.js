@@ -5,6 +5,7 @@ import {
   ProfileStackNavigator,
   ProfileNotConnectedStackNavigator,
   CategoriesStackNavigator,
+  CheesesStackNavigator,
   ScanStackNavigator,
   SearchStackNavigator,
 } from './StackNavigators';

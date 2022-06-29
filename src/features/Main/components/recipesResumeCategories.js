@@ -82,6 +82,10 @@ export const RecipesResumeCategories = () => {
                   position: 'relative', // because it's parent
                   marginHorizontal: 2,
                 }}>
+                 <TouchableOpacity
+                                  onPress={() => navigation.replace('Cheeses', recipe)}
+
+                >
                 <Text
                   style={{
                     fontWeight: 'bold',
@@ -98,6 +102,7 @@ export const RecipesResumeCategories = () => {
                     ? recipe.name.substring(0, 20) + '...'
                     : recipe.name}
                 </Text>
+                </TouchableOpacity>
               </ImageBackground>
             ))}
         </View>

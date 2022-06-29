@@ -73,13 +73,20 @@ export const CategoriesResume = () => {
             categories.map(category => (
               <ImageBackground
                 source={myImgsTable[category.id]}
+                onPress={() => navigation.replace('Cheeses', category)}
                 style={{
                   height: height / 5,
                   width: width / 2.2,
                   position: 'relative', // because it's parent
                   marginHorizontal: 2,
                 }}>
+                <TouchableOpacity
+                                  onPress={() => navigation.replace('Cheeses', category)}
+
+                >
                 <Text
+                                                  onPress={() => navigation.replace('Cheeses', category)}
+
                   style={{
                     fontWeight: 'bold',
                     color: 'white',
@@ -93,6 +100,8 @@ export const CategoriesResume = () => {
                   }}>
                   {category.name}
                 </Text>
+                </TouchableOpacity>
+                
               </ImageBackground>
             ))}
         </View>

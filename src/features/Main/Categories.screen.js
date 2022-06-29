@@ -67,15 +67,7 @@ const Categories = () => {
             horizontal
             nestedScrollEnabled={true}>
             <CategoriesMaps />
-            <CategoriesMaps />
-
-            <CategoriesMaps />
-
-            <CategoriesMaps />
-
-            <CategoriesMaps />
-
-            <CategoriesMaps />
+          
           </ScrollView>
         </View>
 
@@ -91,9 +83,6 @@ const Categories = () => {
           style={styles.setScrollViewSelection}
           horizontal
           nestedScrollEnabled={true}>
-          <CardSelectionFile />
-          <CardSelectionFile />
-          <CardSelectionFile />
           <CardSelectionFile />
         </ScrollView>
 

@@ -52,8 +52,7 @@ const HomeRegistration = ({navigation}) => {
 
           <View style={styles.fixViewBtn3}>
             <TouchableOpacity
-              style={[styles.btn3]}
-              onPress={() => navigation.replace('HomeCoin')}>
+              style={[styles.btn3]}>
               <Text style={styles.textBtn3Set}>
                 Continuer sans s'enregistrer
               </Text>

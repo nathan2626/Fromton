@@ -9,7 +9,7 @@ import Profile from '../features/Main/Profile.screen';
 import Cheese from '../features/Main/Cheese.screen';
 import Recipe from '../features/Main/Recipe.screen';
 import ProfileNotConnected from '../features/Main/ProfileNotConnected.screen';
-
+import Cheeses from '../features/Main/Cheeses.screen';
 const Stack = createStackNavigator();
 
 const HomeStackNavigator = () => {
@@ -19,7 +19,32 @@ const HomeStackNavigator = () => {
         headerShown: false,
       })}>
       <Stack.Screen name="Home" options={{title: 'Home'}} component={Home} />
+      <Stack.Screen name="Cheeses" component={Cheeses} />
       <Stack.Screen name="Cheese" component={Cheese} />
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="ProfileNotConnected"
+        component={ProfileNotConnected}
+      />
+      <Stack.Screen name="Categories" component={Categories} />
+      <Stack.Screen name="Recipe" component={Recipe} />
+    </Stack.Navigator>
+  );
+};
+
+const CheesesStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={() => ({
+        headerShown: false,
+      })}>
+      <Stack.Screen
+        name="Cheese"
+        options={{title: 'Cheeses'}}
+        component={Cheeses}
+      />
+      <Stack.Screen name="Cheese" component={Cheese} />
+      <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen
         name="ProfileNotConnected"
@@ -73,6 +98,7 @@ const CategoriesStackNavigator = () => {
         component={ProfileNotConnected}
       />
       <Stack.Screen name="Cheese" component={Cheese} />
+      <Stack.Screen name="Cheeses" component={Cheeses} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Recipe" component={Recipe} />
     </Stack.Navigator>
@@ -92,6 +118,7 @@ const ScanStackNavigator = () => {
         component={ProfileNotConnected}
       />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Cheeses" component={Cheeses} />
       <Stack.Screen name="Cheese" component={Cheese} />
       <Stack.Screen name="Recipe" component={Recipe} />
     </Stack.Navigator>
@@ -122,6 +149,7 @@ const SearchStackNavigator = () => {
 
 export {
   HomeStackNavigator,
+  CheesesStackNavigator,
   ProfileStackNavigator,
   CategoriesStackNavigator,
   ScanStackNavigator,

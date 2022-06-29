@@ -12,12 +12,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		28D4FE66286A3DC000519F35 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FE60286A3DC000519F35 /* Extensions.swift */; };
-		28D4FE67286A3DC000519F35 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FE61286A3DC000519F35 /* Detector.swift */; };
-		28D4FE68286A3DC000519F35 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FE62286A3DC000519F35 /* GoogLeNetPlaces.mlmodel */; };
-		28D4FE69286A3DC000519F35 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FE63286A3DC000519F35 /* UIImage+CVPixelBuffer.swift */; };
-		28D4FE6A286A3DC000519F35 /* CheeseClassifier1.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FE64286A3DC000519F35 /* CheeseClassifier1.mlpackage */; };
-		28D4FE6D286A3E7D00519F35 /* Detector.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FE6C286A3E7D00519F35 /* Detector.m */; };
+		2878B4BC286CE2E9009840B4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878B4B6286CE2E8009840B4 /* Extensions.swift */; };
+		2878B4BD286CE2E9009840B4 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878B4B7286CE2E8009840B4 /* UIImage+CVPixelBuffer.swift */; };
+		2878B4BE286CE2E9009840B4 /* CheeseClassifier1.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 2878B4B8286CE2E8009840B4 /* CheeseClassifier1.mlpackage */; };
+		2878B4C1286CE2E9009840B4 /* Detector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2878B4BB286CE2E8009840B4 /* Detector.m */; };
+		2878B4C5286CE438009840B4 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2878B4C4286CE438009840B4 /* GoogLeNetPlaces.mlmodel */; };
+		2878B4C7286CE544009840B4 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878B4C6286CE544009840B4 /* Detector.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		F2D15C6794080EB7E8C535D4 /* libPods-Fromton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 521A73A0C1B4EFAFD3DB3839 /* libPods-Fromton.a */; };
 /* End PBXBuildFile section */
@@ -45,13 +45,13 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Fromton/main.m; sourceTree = "<group>"; };
 		1EBFB029E032C1FE8F84CEB3 /* Pods-Fromton-FromtonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fromton-FromtonTests.release.xcconfig"; path = "Target Support Files/Pods-Fromton-FromtonTests/Pods-Fromton-FromtonTests.release.xcconfig"; sourceTree = "<group>"; };
 		2839AFA32868CD05008BFE5F /* Fromton-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fromton-Bridging-Header.h"; sourceTree = "<group>"; };
-		2839AFC02868D27F008BFE5F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		28D4FE60286A3DC000519F35 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		28D4FE61286A3DC000519F35 /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
-		28D4FE62286A3DC000519F35 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
-		28D4FE63286A3DC000519F35 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
-		28D4FE64286A3DC000519F35 /* CheeseClassifier1.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = CheeseClassifier1.mlpackage; sourceTree = "<group>"; };
-		28D4FE6C286A3E7D00519F35 /* Detector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detector.m; sourceTree = "<group>"; };
+		2878B4A8286C8E7E009840B4 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		2878B4B6286CE2E8009840B4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2878B4B7286CE2E8009840B4 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		2878B4B8286CE2E8009840B4 /* CheeseClassifier1.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = CheeseClassifier1.mlpackage; sourceTree = "<group>"; };
+		2878B4BB286CE2E8009840B4 /* Detector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detector.m; sourceTree = "<group>"; };
+		2878B4C4286CE438009840B4 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
+		2878B4C6286CE544009840B4 /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
 		521A73A0C1B4EFAFD3DB3839 /* libPods-Fromton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fromton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Fromton/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C6480004287AD11A6A4ECDC /* Pods-Fromton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fromton.debug.xcconfig"; path = "Target Support Files/Pods-Fromton/Pods-Fromton.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,13 +138,13 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				28D4FE6C286A3E7D00519F35 /* Detector.m */,
-				28D4FE64286A3DC000519F35 /* CheeseClassifier1.mlpackage */,
-				28D4FE61286A3DC000519F35 /* Detector.swift */,
-				28D4FE60286A3DC000519F35 /* Extensions.swift */,
-				28D4FE62286A3DC000519F35 /* GoogLeNetPlaces.mlmodel */,
-				28D4FE63286A3DC000519F35 /* UIImage+CVPixelBuffer.swift */,
-				2839AFC02868D27F008BFE5F /* Header.h */,
+				2878B4A8286C8E7E009840B4 /* Header.h */,
+				2878B4B8286CE2E8009840B4 /* CheeseClassifier1.mlpackage */,
+				2878B4BB286CE2E8009840B4 /* Detector.m */,
+				2878B4C4286CE438009840B4 /* GoogLeNetPlaces.mlmodel */,
+				2878B4B6286CE2E8009840B4 /* Extensions.swift */,
+				2878B4C6286CE544009840B4 /* Detector.swift */,
+				2878B4B7286CE2E8009840B4 /* UIImage+CVPixelBuffer.swift */,
 				13B07FAE1A68108700A75B9A /* Fromton */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* FromtonTests */,
@@ -440,14 +440,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28D4FE6A286A3DC000519F35 /* CheeseClassifier1.mlpackage in Sources */,
+				2878B4BE286CE2E9009840B4 /* CheeseClassifier1.mlpackage in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				28D4FE69286A3DC000519F35 /* UIImage+CVPixelBuffer.swift in Sources */,
-				28D4FE68286A3DC000519F35 /* GoogLeNetPlaces.mlmodel in Sources */,
-				28D4FE66286A3DC000519F35 /* Extensions.swift in Sources */,
+				2878B4BC286CE2E9009840B4 /* Extensions.swift in Sources */,
+				2878B4C7286CE544009840B4 /* Detector.swift in Sources */,
+				2878B4C5286CE438009840B4 /* GoogLeNetPlaces.mlmodel in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				28D4FE67286A3DC000519F35 /* Detector.swift in Sources */,
-				28D4FE6D286A3E7D00519F35 /* Detector.m in Sources */,
+				2878B4BD286CE2E9009840B4 /* UIImage+CVPixelBuffer.swift in Sources */,
+				2878B4C1286CE2E9009840B4 /* Detector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

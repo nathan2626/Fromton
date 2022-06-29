@@ -54,6 +54,7 @@ const CategoriesMaps = () => {
         categories.map(category => (
           <ImageBackground
             source={myImgsTable[category.id]}
+            onPress={() => navigation.replace('Cheeses', category)}
             style={{
               height: height / 3,
               width: width * 0.87,
@@ -62,6 +63,7 @@ const CategoriesMaps = () => {
               marginBottom: 28,
             }}>
             <Text
+              onPress={() => navigation.replace('Cheeses', category)}
               style={{
                 fontWeight: '500',
                 color: 'white',

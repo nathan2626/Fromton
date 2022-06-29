@@ -74,6 +74,52 @@ export const Ingredients = () => {
 };
 
 const styles = StyleSheet.create({
+  viewForPadding: {
+    paddingHorizontal: 20,
+    marginTop: -10,
+  },
+  setLabelInfo: {
+    fontSize: 19,
+    fontWeight: 'bold',
+    marginTop: 26,
+  },
+  setLabelDescription: {
+    color: 'grey',
+    fontSize: 16,
+    lineHeight: 22,
+    marginTop: 5,
+    textAlign: 'justify',
+  },
+  perfectWine: {
+    color: 'grey',
+    fontSize: 16,
+    lineHeight: 22,
+    marginTop: 4,
+    textAlign: 'justify',
+  },
+  wineSpecial: {
+    color: 'orange',
+    fontWeight: '500',
+  },
+  wineChoose: {
+    fontSize: 19,
+    fontWeight: 'bold',
+    marginTop: 0,
+  },
+  setTexteQuestion: {
+    textAlign: 'center',
+    fontSize: 19,
+    fontWeight: 'bold',
+    marginTop: 20,
+  },
+  setTexteSupport: {
+    color: 'grey',
+    fontSize: 16,
+    lineHeight: 22,
+    marginTop: 4,
+    textAlign: 'center',
+    paddingBottom: 20,
+  },
   setScrollViewAll: {
     flex: 1,
     backgroundColor: '#fff',
@@ -120,48 +166,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
   },
-  setTexteQuestion: {
-    textAlign: 'center',
-    fontSize: 19,
-    fontWeight: 'bold',
-    marginTop: 20,
-  },
+
   recipeLink: {
     fontSize: 19,
     fontWeight: 'bold',
     marginTop: 20,
-  },
-  perfectWine: {
-    color: 'grey',
-    fontSize: 16,
-    lineHeight: 22,
-    marginTop: 4,
-    textAlign: 'justify',
-  },
-  wineSpecial: {
-    color: 'orange',
-    fontWeight: '500',
-  },
-  wineChoose: {
-    fontSize: 19,
-    fontWeight: 'bold',
-    marginTop: 0,
-  },
-  setLabelInfo: {
-    fontSize: 19,
-    fontWeight: 'bold',
-    marginTop: 26,
-  },
-  viewForPadding: {
-    paddingHorizontal: 20,
-    marginTop: -10,
-  },
-  setLabelDescription: {
-    color: 'grey',
-    fontSize: 16,
-    lineHeight: 22,
-    marginTop: 5,
-    textAlign: 'justify',
   },
   setViewAllLabels: {
     marginTop: 10,
@@ -178,14 +187,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontStyle: 'italic',
   },
-  setTexteSupport: {
-    color: 'grey',
-    fontSize: 16,
-    lineHeight: 22,
-    marginTop: 4,
-    textAlign: 'center',
-    paddingBottom: 20,
-  },
+
   header: {
     paddingHorizontal: 20,
     paddingTop: 40,

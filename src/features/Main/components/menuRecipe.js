@@ -35,7 +35,7 @@ export const MenuRecipe = () => {
             <Icon
               name="arrow-back"
               style={styles.setIcon}
-              onPress={() => navigation.navigate('Cheese', {screen: 'Recipe'})}
+              onPress={() => navigation.navigate('Home', {screen: 'Recipe'})}
             />
             <Image
               source={require('../../../assets/onBoarding/logo-fromton-blanc.png')}

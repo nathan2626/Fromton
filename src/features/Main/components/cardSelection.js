@@ -218,7 +218,7 @@ export const CardSelectionFile = () => {
                   color={'green'}
                   size={32}
                   style={styles.setLeftFixedMenu}
-                  onPress={() => navigation.replace('Cheese')}
+                  onPress={() => navigation.replace('Cheese', cheese)}
                   name="add"
                 />
                 <Text>PARTAGER</Text>

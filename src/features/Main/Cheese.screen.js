@@ -315,7 +315,7 @@ const Cheese = () => {
             </Text>
             <Text
               style={styles.perfectWine}>
-              Le vin parfait pour le Comté 12 mois d'affinage est le{' '}
+              Le vin parfait pour ce fromagee est le{' '}
               <Text style={styles.wineSpecial}>
               {route.params.wine}
               </Text>

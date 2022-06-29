@@ -9,13 +9,21 @@ import {
   Dimensions,
   Alert,
 } from 'react-native';
+import LottieView from "lottie-react-native";
 const {width, height} = Dimensions.get('window');
 
 export const SlideFile = ({item}) => {
   return (
     <>
       <View style={styles.slideViewImg}>
-        <Image source={item.image} style={styles.slideViewSetImg} />
+        <LottieView
+            source={item.image}
+            autoPlay
+            loop = {true}
+            speed = {1.0}
+            style={styles.slideViewSetImg}
+          />
+        {/* <Image source={item.image} style={styles.slideViewSetImg} /> */}
         <View style={styles.slideViewText}>
           <Text style={styles.slideViewTextTitle}>{item.title}</Text>
           <Text style={styles.slideViewTextSubtitle}>{item.subtitle}</Text>
